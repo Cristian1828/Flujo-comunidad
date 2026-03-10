@@ -2,51 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- HOME -->
     <url>
-        <loc>https://flujooficial.com/</loc>
+        <loc>https://miflujotvplus.com/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="es" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-419" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-PE" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-CO" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-MX" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-CL" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-AR" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-EC" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-BO" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-VE" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-US" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-GT" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-CR" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-PA" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-HN" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-NI" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-SV" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-DO" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-UY" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-PY" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="es-ES" href="https://flujooficial.com/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-419" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-CO" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-CL" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-AR" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-EC" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-BO" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-VE" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-US" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-GT" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-CR" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-PA" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-HN" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-NI" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-SV" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-DO" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-UY" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-PY" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://miflujotvplus.com/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://miflujotvplus.com/"/>
         <image:image>
-            <image:loc>https://flujooficial.com/images/hero-streaming.webp</image:loc>
-            <image:title>Flujo TV — Streaming Premium</image:title>
-            <image:caption>Plataforma de streaming con más de 3,000 canales en vivo, películas y series en 4K</image:caption>
+            <image:loc>https://miflujotvplus.com/images/hero-streaming.webp</image:loc>
+            <image:title>FlujoTV+ — Comunidad Streaming Premium</image:title>
+            <image:caption>Guías de instalación, soporte y comunidad FlujoTV+ con +3,000 canales en vivo</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://flujooficial.com/images/logo_flujo.webp</image:loc>
-            <image:title>Logo Flujo TV</image:title>
+            <image:loc>https://miflujotvplus.com/images/logo_flujo.webp</image:loc>
+            <image:title>Logo FlujoTV+</image:title>
         </image:image>
     </url>
+    <!-- GUÍAS DE INSTALACIÓN (Hub) -->
     <url>
-        <loc>https://flujooficial.com/privacidad</loc>
+        <loc>https://miflujotvplus.com/instalar</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <!-- Fire Stick -->
+    <url>
+        <loc>https://miflujotvplus.com/instalar/fire-stick</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Google TV -->
+    <url>
+        <loc>https://miflujotvplus.com/instalar/google-tv</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- TV Box Android -->
+    <url>
+        <loc>https://miflujotvplus.com/instalar/tv-box</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Android / Celular -->
+    <url>
+        <loc>https://miflujotvplus.com/instalar/android</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Xiaomi -->
+    <url>
+        <loc>https://miflujotvplus.com/instalar/xiaomi</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <!-- FAQ -->
+    <url>
+        <loc>https://miflujotvplus.com/faq</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Descargar APK -->
+    <url>
+        <loc>https://miflujotvplus.com/descargar-apk</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Planes -->
+    <url>
+        <loc>https://miflujotvplus.com/planes</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <!-- Privacidad -->
+    <url>
+        <loc>https://miflujotvplus.com/privacidad</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
+    <!-- Términos -->
     <url>
-        <loc>https://flujooficial.com/terminos</loc>
+        <loc>https://miflujotvplus.com/terminos</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
