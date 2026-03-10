@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import InstallGuides from '../../components/InstallGuides.astro';
+import { site } from '../../config/site';
+---
+
+<Layout>
+  <Navbar />
+  <main>
+    <section class="pt-28 pb-10 relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-carbon-900 to-carbon-950"></div>
+      <div class="section-container relative z-10">
+        <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-cream-50 mb-4">
+            Guías de Instalación
+          </h1>
+          <p class="text-cream-400 text-lg">
+            Selecciona tu dispositivo y sigue las instrucciones paso a paso para instalar Flujo TV en minutos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <InstallGuides />
+  </main>
+  <Footer />
+</Layout>

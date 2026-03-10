@@ -1,0 +1,224 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../config/site';
+
+const pageTitle = "Cómo Instalar Flujo TV en Google TV y Chromecast | Guía 2026";
+const pageDescription = "Tutorial oficial para descargar e instalar la app de Flujo TV en Chromecast con Google TV. Utiliza el código Downloader 3912363 para una instalación rápida y segura.";
+
+const guide = site.installGuides.find(g => g.id === 'googletv');
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  <Navbar />
+
+  <main class="pt-24 pb-16 min-h-screen">
+    <div class="section-container">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex text-cream-500 text-sm mb-8" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="hover:text-ember-400 transition-colors">Inicio</a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+              </svg>
+              <a href="/instalar" class="hover:text-ember-400 transition-colors">Guías de Instalación</a>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+              </svg>
+              <span class="text-cream-300">Google TV / Chromecast</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Content Grid -->
+      <div class="grid lg:grid-cols-3 gap-12">
+        
+        <!-- Main Content -->
+        <article class="lg:col-span-2">
+          <header class="mb-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ember-900/30 text-ember-400 text-sm font-medium border border-ember-500/20 mb-6">
+               Tutorial Paso a Paso
+            </div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-cream-100 leading-tight mb-6">
+              Instalar <span class="text-gradient-ember">Flujo TV</span> en Chromecast con Google TV
+            </h1>
+            <p class="text-lg text-cream-400 leading-relaxed">
+              Google TV y Chromecast son excelentes opciones para usar Flujo TV. Sigue este tutorial oficial para 
+              descargar el APK usando nuestro código verificador y acceder a todo el contenido premium hoy mismo.
+            </p>
+          </header>
+
+          <!-- Featured Image or Video -->
+          <div class="rounded-2xl overflow-hidden border border-cream-500/10 shadow-2xl mb-12 bg-carbon-900 aspect-video">
+            <img src={guide?.image} alt="Instalación de Flujo TV en Google TV" class="w-full h-full object-cover opacity-80" />
+          </div>
+
+          <!-- Video Tutorial -->
+          <div class="mb-12 glass-panel p-6 rounded-2xl border-l-4 border-l-ember-500 bg-gradient-to-br from-carbon-800 to-carbon-900">
+             <h2 class="text-xl font-bold text-cream-100 mb-4 flex items-center gap-2">
+                <svg class="w-6 h-6 text-ember-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"></path></svg>
+                Instalación Guiada en Video
+             </h2>
+             <p class="text-cream-400 mb-4 text-sm">Mira cómo autorizamos los permisos especiales en Google TV e instalamos Flujo TV en menos de 3 minutos:</p>
+             <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-cream-500/10" style="padding:56.25% 0 0 0;position:relative;">
+               <iframe src="https://player.vimeo.com/video/1171969551?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Guia Flujo Google TV"></iframe>
+             </div>
+          </div>
+
+          <!-- The Steps -->
+          <div class="space-y-8">
+            <h2 class="text-2xl font-bold text-cream-100 border-b border-cream-500/10 pb-4">Pasos de Instalación</h2>
+            
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-ember-600 flex items-center justify-center text-white font-bold text-lg">1</div>
+              <div>
+                <h3 class="text-xl font-bold text-cream-200 mb-2">Modo Desarrollador</h3>
+                <p class="text-cream-400 leading-relaxed">
+                  Para permitir apps externas en Google TV, ve a <strong class="text-cream-200">Configuración → Sistema → Acerca de</strong>. Busca la opción "Compilación del SO de Android TV" (al final de la lista) y presiona "Ok" en tu control remoto repetidas veces hasta que veas el mensaje "¡Ya eres un desarrollador!".
+                </p>
+              </div>
+            </div>
+
+            <!-- INJECTED CTA FOR SALES -->
+            <div class="glass-panel p-6 rounded-xl border border-ember-500/30 bg-gradient-to-r from-ember-900/40 to-carbon-900 my-8 flex items-center gap-6">
+              <img src="/images/devices-compatible.webp" alt="Planes" class="w-16 h-16 rounded-xl object-cover hidden sm:block shadow-xl" />
+              <div>
+                <h4 class="text-lg font-bold text-cream-100 mb-2"> Aprovecha Nuestra Oferta</h4>
+                <p class="text-cream-400 text-sm mb-3">Obtén 2 meses gratis al comprar tu plan anual. Disfruta Flujo TV en tu Google TV, Celular y otra pantalla adicional (3 en total).</p>
+                <a href="/planes" class="text-ember-400 font-bold hover:text-ember-300 text-sm">Ver Tarifas 2026 →</a>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-ember-600 flex items-center justify-center text-white font-bold text-lg">2</div>
+              <div>
+                <h3 class="text-xl font-bold text-cream-200 mb-2">Instalar Downloader</h3>
+                <p class="text-cream-400 leading-relaxed">
+                  Regresa a la pantalla principal, abre la Google Play Store y busca la aplicación <strong>"Downloader"</strong> e instálala.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-ember-600 flex items-center justify-center text-white font-bold text-lg">3</div>
+              <div>
+                <h3 class="text-xl font-bold text-cream-200 mb-2">Permisos Ocultos</h3>
+                <p class="text-cream-400 leading-relaxed">
+                  Antes de abrir Downloader, debes darle permiso para instalar aplicaciones. Ve a <strong class="text-cream-200">Configuración → Apps → Seguridad y Restricciones → Instalar aplicaciones desconocidas</strong>. Busca "Downloader" en esa lista y activa el interruptor.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-ember-600 flex items-center justify-center text-white font-bold text-lg">4</div>
+              <div>
+                <h3 class="text-xl font-bold text-cream-200 mb-2">Bajar Flujo TV</h3>
+                <p class="text-cream-400 leading-relaxed">
+                  Ahora sí, abre Downloader, permite que acceda a los archivos, e ingresa en la barra nuestro código rápido y haz clic en Go:
+                </p>
+                <div class="bg-carbon-950 border border-cream-500/20 rounded-lg p-5 mt-4 text-center">
+                  <span class="block text-sm text-cream-500 mb-2">CÓDIGO OFICIAL FLUJO TV</span>
+                  <span class="text-4xl font-mono font-bold text-ember-400 tracking-widest">{site.download.firestickCode}</span>
+                </div>
+                <p class="mt-4 text-cream-400 text-sm">
+                  Al finalizar la descarga, presiona "Instalar", abre la aplicación e introduce tu usuario y clave comprados en la web.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="space-y-8">
+          
+          <!-- CTA Sidebar -->
+          <div class="glass-panel p-6 rounded-2xl border border-ember-500/20 text-center sticky top-28">
+            <h3 class="text-xl font-bold text-cream-100 mb-3">Planes Flujo TV</h3>
+            <p class="text-sm text-cream-400 mb-6">TV en Vivo 24/7 de todos los países de Latinoamérica, España y Estados Unidos.</p>
+            <a href="/planes" class="btn-ember block w-full py-3 mb-4">Adquiere tu Cuenta</a>
+            <p class="text-xs text-cream-500">¿Dudas? Nuestro chat está abierto 24/7</p>
+          </div>
+
+          <!-- Other Guides -->
+          <div class="glass-panel p-6 rounded-2xl border border-cream-500/10">
+            <h3 class="text-lg font-bold text-cream-100 mb-4">Otras Guías</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="/instalar/fire-stick" class="flex items-center gap-3 text-cream-400 hover:text-ember-400 transition-colors">
+                  <svg class="w-5 h-5 text-ember-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  <span class="text-sm font-medium">Instalar en Fire Stick</span>
+                </a>
+              </li>
+              <li>
+                <a href="/instalar/tv-box" class="flex items-center gap-3 text-cream-400 hover:text-ember-400 transition-colors">
+                  <svg class="w-5 h-5 text-ember-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  <span class="text-sm font-medium">Instalar en TV Box</span>
+                </a>
+              </li>
+              <li>
+                <a href="/instalar/android" class="flex items-center gap-3 text-cream-400 hover:text-ember-400 transition-colors">
+                  <svg class="w-5 h-5 text-ember-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  <span class="text-sm font-medium">Instalar en Android</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </aside>
+      </div>
+
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<!-- HowTo Schema Specific for this page -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cómo instalar Flujo TV en Google TV",
+  "description": "Tutorial oficial para agregar aplicaciones externas (APK de Flujo TV) en Google TV y Chromecast.",
+  "image": `${site.canonical}/images/googletv-setup.webp`,
+  "totalTime": "PT4M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Activar modo desarrollador",
+      "text": "Ve a Configuración > Sistema > Acerca de, y presiona 7 veces sobre 'Compilación del SO'.",
+      "url": `${site.canonical}/instalar/google-tv#paso1`
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Descargar Downloader",
+      "text": "Desde Google Play, instala la aplicación naranja llamada 'Downloader'.",
+      "url": `${site.canonical}/instalar/google-tv#paso2`
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Dar Permisos",
+      "text": "Ve a Configuración > Seguridad y Restricciones > Instalar aplicaciones desconocidas y activa Downloader.",
+      "url": `${site.canonical}/instalar/google-tv#paso3`
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Ingresa el Código Downloader de Flujo TV",
+      "text": "Abre Downloader e introduce el código 3912363 para descargar el archivo APK seguro e instálalo.",
+      "url": `${site.canonical}/instalar/google-tv#paso4`
+    }
+  ]
+})} />

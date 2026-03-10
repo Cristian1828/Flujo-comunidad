@@ -1,0 +1,120 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PricingTable from '../components/PricingTable.astro';
+import { site } from '../config/site';
+
+const pageTitle = "Planes Flujo TV | Comprar Cuenta Oficial 2026";
+const pageDescription = "Conoce nuestros paquetes de Flujo TV desde 1 hasta 12 meses. Promociones especiales y descuentos disponibles válidos para 3 dispositivos.";
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  <Navbar />
+
+  <main class="pt-24 pb-16 min-h-screen">
+    
+    <!-- Hero / Intro for Pricing Page -->
+    <section class="py-12 bg-carbon-950 relative overflow-hidden">
+      <!-- Decorative background element -->
+      <div class="absolute inset-0 bg-[url('/images/bg-living-room.png')] opacity-20 mix-blend-overlay bg-cover bg-center"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-carbon-950/50 via-carbon-950 to-carbon-950"></div>
+      
+      <div class="section-container relative z-10 text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-cream-100 leading-tight mb-6">
+          Elige el Plan <span class="text-gradient-ember">Perfecto para Ti</span>
+        </h1>
+        <p class="text-xl text-cream-400 leading-relaxed mb-4">
+          Sin contratos, sin cobros automáticos ocultos y con garantía de estabilidad 2026.
+        </p>
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ember-900/30 text-amber-400 text-sm font-bold border border-amber-500/20">
+           ¡Todos los planes incluyen 3 dispositivos simultáneos!
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Table Component -->
+    <div class="-mt-8 relative z-20">
+      <PricingTable />
+    </div>
+
+    <!-- Value Proposition Section -->
+    <section class="py-20 border-t border-cream-500/5 bg-carbon-900">
+      <div class="section-container">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-heading font-bold text-cream-100 text-center mb-12">
+            ¿Qué incluye tu suscripción a Flujo TV?
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-panel p-8 rounded-2xl border border-cream-500/10">
+              <div class="w-12 h-12 rounded-full bg-ember-900/50 text-ember-400 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-cream-100 mb-3">Servidores Cloud Premium</h3>
+              <p class="text-cream-400 leading-relaxed text-sm">
+                Nuestra tecnología Anti-Freeze distribuye la carga en múltiples servidores, garantizando una transmisión estable incluso durante los partidos más esperados del año.
+              </p>
+            </div>
+            
+            <div class="glass-panel p-8 rounded-2xl border border-cream-500/10">
+              <div class="w-12 h-12 rounded-full bg-green-900/50 text-green-400 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-cream-100 mb-3">Catálogo Ilimitado (VOD)</h3>
+              <p class="text-cream-400 leading-relaxed text-sm">
+                No solo es TV en vivo. Actualizamos a diario nuestro catálogo con las últimas películas de cartelera y temporadas completas de series de todas las plataformas (Netflix, Max, Disney+).
+              </p>
+            </div>
+
+            <div class="glass-panel p-8 rounded-2xl border border-cream-500/10">
+              <div class="w-12 h-12 rounded-full bg-blue-900/50 text-blue-400 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-cream-100 mb-3">Compatibilidad Universal</h3>
+              <p class="text-cream-400 leading-relaxed text-sm">
+                Puedes usar tu misma cuenta en el Smart TV de la sala, en tu teléfono Android mientras viajas, o en tu Google TV. 3 Accesos simultáneos garantizados.
+              </p>
+            </div>
+
+            <div class="glass-panel p-8 rounded-2xl border border-cream-500/10 border-l-4 border-l-ember-500">
+              <div class="w-12 h-12 rounded-full bg-ember-900/50 text-ember-400 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-cream-100 mb-3">Soporte y Garantía Oficial</h3>
+              <p class="text-cream-400 leading-relaxed text-sm">
+                Somos distribuidores autorizados. Te brindamos asistencia paso a paso para la instalación y soporte técnico real los 365 días del año.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Flujo TV Suscripción",
+  "description": "Suscripciones mensuales, trimestrales, semestrales y anuales para Flujo TV. Acceso a canales en vivo, películas y series.",
+  "image": `${site.canonical}/images/hero-streaming.webp`,
+  "brand": {
+    "@type": "Brand",
+    "name": "Flujo TV"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "url": `${site.canonical}/planes`,
+    "priceCurrency": "USD",
+    "lowPrice": "9.99",
+    "highPrice": "69.99",
+    "offerCount": "4"
+  }
+})} />

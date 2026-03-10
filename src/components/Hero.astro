@@ -1,0 +1,67 @@
+---
+import { site, getSupportWhatsappLink } from '../config/site';
+---
+
+<section id="inicio" class="relative min-h-[75vh] flex items-center pt-24 pb-16 overflow-hidden bg-carbon-950">
+  <!-- Subtle background glow -->
+  <div class="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-ember-600 rounded-full blur-[150px] opacity-20 pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 -ml-40 -mb-40 w-[500px] h-[500px] bg-ember-900 rounded-full blur-[120px] opacity-30 pointer-events-none"></div>
+
+  <div class="section-container relative z-10 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Left Column: Content -->
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-carbon-800 border-carbon-700 border">
+          <span class="inline-block w-2 h-2 rounded-full bg-ember-400 animate-pulse"></span>
+          <span class="text-ember-300 text-xs font-semibold uppercase tracking-wider">Flujo TV Oficial</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold leading-tight mb-6 text-cream-50">
+          Comunidad & <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-ember-300 to-ember-500">Tutoriales Tech</span>
+        </h1>
+
+        <p class="text-lg text-cream-400 leading-relaxed mb-10 max-w-xl font-body">
+          Tu centro de recursos definitivo. Encuentra instaladores, guías paso a paso, y las últimas novedades de la app número uno de streaming.
+        </p>
+
+        <!-- Compact CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#guias" class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-ember-600 hover:bg-ember-500 text-white font-semibold transition-all shadow-ember hover:shadow-ember-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"></path></svg>
+            LEER GUÍAS
+          </a>
+          <a href="/descargar-apk" class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-carbon-800 hover:bg-carbon-700 text-cream-100 font-semibold transition-all border border-carbon-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"></path></svg>
+            DESCARGAR APK
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Visual Component -->
+      <div class="relative hidden lg:block animate-float">
+        <div class="absolute inset-0 bg-gradient-to-tr from-ember-600 to-transparent blur-2xl opacity-30 rounded-full"></div>
+        <img 
+          src="/images/hero-tech-streaming.png" 
+          alt="Flujo TV Interfaz Comunidad" 
+          class="relative z-10 w-full h-auto object-cover rounded-2xl shadow-2xl border border-carbon-700"
+          loading="eager"
+        />
+        <!-- Tech Decorative elements -->
+        <div class="absolute -right-6 top-10 bg-carbon-800/80 backdrop-blur-md border border-carbon-600 p-4 rounded-xl shadow-xl z-20">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-ember-500/20 flex items-center justify-center text-ember-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg>
+            </div>
+            <div>
+              <p class="text-xs text-cream-400">Estado Servidor</p>
+              <p class="font-bold text-cream-50">Online 100%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FAQComponent from '../components/FAQ.astro';
+import { site } from '../config/site';
+
+const pageTitle = "Preguntas Frecuentes (FAQ) | Soporte Oficial Flujo TV";
+const pageDescription = "Encuentra respuestas a todas tus dudas sobre Flujo TV: cómo instalar, métodos de pago, dispositivos compatibles, requisitos de internet y mucho más.";
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  <Navbar />
+
+  <main class="pt-24 pb-16 min-h-screen">
+    
+    <!-- Hero / Intro for FAQ Page -->
+    <section class="py-12 bg-carbon-950 relative overflow-hidden">
+      <!-- Decorative background element -->
+      <div class="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-ember-900/20 to-transparent"></div>
+      
+      <div class="section-container relative z-10 text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-cream-100 leading-tight mb-6">
+          Preguntas <span class="text-gradient-ember">Frecuentes</span>
+        </h1>
+        <p class="text-xl text-cream-400 leading-relaxed mb-8">
+          Todo lo que necesitas saber antes y después de contratar Flujo TV. Resuelve tus dudas en segundos.
+        </p>
+
+        <!-- Search Bar Mockup -->
+        <div class="max-w-2xl mx-auto relative group">
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <svg class="w-5 h-5 text-cream-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <input 
+            type="text" 
+            placeholder="Ejemplo: ¿Cuántas pantallas puedo usar?" 
+            class="w-full pl-12 pr-4 py-4 rounded-full bg-carbon-900 border border-cream-500/20 text-cream-100 placeholder-cream-600 focus:outline-none focus:border-ember-500 focus:ring-1 focus:ring-ember-500 transition-all shadow-lg"
+            readonly
+          />
+          <div class="absolute inset-y-0 right-2 flex items-center">
+            <button class="bg-ember-600 hover:bg-ember-500 text-white px-6 py-2 rounded-full font-medium transition-colors text-sm">
+              Buscar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Re-use the existing FAQ component -->
+    <div class="py-8">
+      <FAQComponent />
+    </div>
+
+    <!-- Still Need Help Section -->
+    <section class="py-16 border-t border-cream-500/5">
+      <div class="section-container">
+        <div class="max-w-4xl mx-auto glass-panel p-10 md:p-14 rounded-3xl border border-ember-500/30 bg-gradient-to-br from-carbon-900 to-ember-900/10 text-center text-balance flex flex-col items-center">
+          
+          <div class="w-20 h-20 bg-carbon-800 rounded-full flex items-center justify-center border border-cream-500/10 shadow-xl mb-6 relative">
+            <span class="absolute z-10"><svg class="w-10 h-10 text-ember-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg></span>
+            <!-- Ping animation behind emoji -->
+            <div class="absolute inset-0 rounded-full border-2 border-ember-500/50 animate-ping"></div>
+          </div>
+          
+          <h2 class="text-3xl font-heading font-bold text-cream-100 mb-4">
+            ¿No encontraste lo que buscabas?
+          </h2>
+          <p class="text-lg text-cream-400 mb-8 max-w-2xl">
+            Nuestro equipo de soporte técnico y ventas está disponible 24/7 en WhatsApp para ayudarte con cualquier duda o problema.
+          </p>
+          <a 
+            href={`https://wa.me/${site.whatsappNumber}?text=Hola,%20tengo%20una%20duda%20sobre%20Flujo%20TV`} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-primary inline-flex items-center gap-3 px-8 py-4 text-lg"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Contactar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

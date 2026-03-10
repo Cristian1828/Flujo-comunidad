@@ -1,0 +1,46 @@
+
+> flujotv-hub@1.0.0 build
+> astro build
+
+[2m16:20:48[22m [34m[content][39m Syncing content
+[2m16:20:48[22m [34m[content][39m Synced content
+[2m16:20:48[22m [34m[types][39m Generated [2m39ms[22m
+[2m16:20:48[22m [34m[build][39m output: [34m"static"[39m
+[2m16:20:48[22m [34m[build][39m mode: [34m"static"[39m
+[2m16:20:48[22m [34m[build][39m directory: [34mC:\Users\dante\OneDrive\Documentos\Flujo-Landings(10)\FlujoTV_comunidad\dist\[39m
+[2m16:20:48[22m [34m[build][39m Collecting build info...
+[2m16:20:48[22m [34m[build][39m [32m✓ Completed in 95ms.[39m
+[2m16:20:48[22m [34m[build][39m Building static entrypoints...
+[33m[1m16:20:49[22m [WARN] [vite][39m 
+/images/bg-abstract-streams.png referenced in /images/bg-abstract-streams.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[33m[1m16:20:49[22m [WARN] [vite][39m 
+/images/bg-devices-dark.png referenced in /images/bg-devices-dark.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[33m[1m16:20:49[22m [WARN] [vite][39m 
+/images/bg-living-room.png referenced in /images/bg-living-room.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[33m[1m16:20:49[22m [WARN] [vite][39m [33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+4  |  
+5  |  /* Google Fonts */
+6  |  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7  |  
+8  |  @layer base {[39m
+[2m16:20:49[22m [34m[vite][39m [32m✓ built in 1.28s[39m
+[2m16:20:49[22m [34m[build][39m [32m✓ Completed in 1.30s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m16:20:49[22m [34m[vite][39m transforming...
+[2m16:20:49[22m [34m[vite][39m [32m✓[39m 4 modules transformed.
+[2m16:20:49[22m [34m[vite][39m rendering chunks...
+[2m16:20:49[22m [34m[vite][39m [32m✓ built in 19ms[39m
+
+[42m[30m generating static routes [39m[49m
+[2m16:20:49[22m [32m▶[39m src/pages/descargar-apk.astro
+[2m16:20:49[22m   [34m└─[39m [2m/descargar-apk/index.html[22m [2m(+8ms)[22m 
+[2m16:20:49[22m [32m▶[39m src/pages/faq.astro
+[2m16:20:49[22m   [34m└─[39m [2m/faq/index.html[22mCannot read properties of undefined (reading 'whatsappUrl')
+  [1mStack trace:[22m
+[2m    at Object.default (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/dist/pages/faq.astro.mjs?time=1773091249973:24:36)
+    at createAstroComponentInstance (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/dist/chunks/astro/server_DUVuAe_m.mjs:1503:20)
+    at renderComponent (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/dist/chunks/astro/server_DUVuAe_m.mjs:1882:12)
+    at faq (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/dist/chunks/astro/server_DUVuAe_m.mjs:139:12)
+    at renderToString (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/node_modules/astro/dist/runtime/server/render/astro/render.js:14:32)[22m

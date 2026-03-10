@@ -1,0 +1,41 @@
+---
+import { site, getSupportWhatsappLink } from '../config/site';
+---
+
+<section id="soporte" class="py-16 sm:py-20 relative">
+  <div class="section-container relative z-10">
+    <div class="text-center mb-12 animate-on-scroll">
+      <h2 class="section-heading">Soporte Técnico</h2>
+      <p class="text-cream-400 mt-3 max-w-xl mx-auto">Ayuda personalizada en cada paso</p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto animate-on-scroll">
+      <!-- WhatsApp -->
+      <a href={getSupportWhatsappLink()} target="_blank" rel="noopener" class="glass-card p-6 text-center group hover:border-green-500/30 transition-all block">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, rgba(37,211,102,0.12), rgba(18,140,126,0.18));">
+          <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-sm text-cream-100 mb-1">WhatsApp</h3>
+        <p class="text-xs text-cream-500">Respuesta inmediata</p>
+      </a>
+
+      <!-- Email -->
+      <a href={`mailto:${site.email}`} class="glass-card p-6 text-center group hover:border-ember-500/30 transition-all block">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, rgba(6,182,212,0.12), rgba(2,132,199,0.18));">
+          <svg class="w-5 h-5 text-ember-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-sm text-cream-100 mb-1">Email</h3>
+        <p class="text-xs text-cream-500">{site.email}</p>
+      </a>
+
+      <!-- 24/7 -->
+      <div class="glass-card p-6 text-center">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(29,78,216,0.18));">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-sm text-cream-100 mb-1">24/7</h3>
+        <p class="text-xs text-cream-500">Todos los días</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+﻿---
+import { site } from '../config/site';
+---
+
+<section id="quick-access" class="py-20 relative">
+  <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(15,23,42,0.9) 0%, rgba(30,41,59,0.3) 50%, rgba(15,23,42,0.9) 100%);"></div>
+  
+  <div class="section-container relative z-10">
+    <div class="text-center mb-14 animate-on-scroll">
+      <span class="badge mb-4">Acceso Rápido</span>
+      <h2 class="section-heading">¿Qué dispositivo tienes?</h2>
+      <p class="section-subheading">Selecciona tu dispositivo y accede directamente a la guía de instalación paso a paso</p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 animate-on-scroll">
+      {site.compatibleDevices.map((device) => (
+        <a href={device.link} class="glass-card p-6 text-center group cursor-pointer block">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+            {device.icon === 'firestick' && ''}
+            {device.icon === 'tvbox' && ''}
+            {device.icon === 'googletv' && ''}
+            {device.icon === 'android' && ''}
+            {device.icon === 'xiaomi' && ''}
+          </div>
+          <h3 class="text-sm sm:text-base font-heading font-semibold text-cream-200 group-hover:text-ember-300 transition-colors">
+            {device.label}
+          </h3>
+          <div class="mt-3 text-xs text-ember-400 opacity-0 group-hover:opacity-100 transition-opacity font-medium">
+            Ver guía →
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Samsung/LG disclaimer -->
+    <div class="mt-10 animate-on-scroll">
+      <div class="glass-card p-5 sm:p-6 max-w-3xl mx-auto" style="border-color: rgba(234, 179, 8, 0.2);">
+        <div class="flex gap-4 items-start">
+          <span class="flex-shrink-0"><svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" /></svg></span>
+          <div>
+            <h4 class="font-heading font-semibold text-yellow-400 text-sm mb-1">Atención Usuarios Samsung / LG</h4>
+            <p class="text-cream-400 text-sm leading-relaxed">
+              Flujo TV no se instala directamente en el sistema nativo de tu televisor (Tizen/WebOS). <strong class="text-cream-200">Es necesario</strong> conectar un dispositivo externo como TV Box, Fire Stick o Chromecast con Google TV para disfrutar del servicio.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+
+> flujotv-hub@1.0.0 build
+> astro build
+
+[2m16:33:45[22m [34m[content][39m Syncing content
+[2m16:33:45[22m [34m[content][39m Synced content
+[2m16:33:45[22m [34m[types][39m Generated [2m32ms[22m
+[2m16:33:45[22m [34m[build][39m output: [34m"static"[39m
+[2m16:33:45[22m [34m[build][39m mode: [34m"static"[39m
+[2m16:33:45[22m [34m[build][39m directory: [34mC:\Users\dante\OneDrive\Documentos\Flujo-Landings(10)\FlujoTV_comunidad\dist\[39m
+[2m16:33:45[22m [34m[build][39m Collecting build info...
+[2m16:33:45[22m [34m[build][39m [32m✓ Completed in 80ms.[39m
+[2m16:33:45[22m [34m[build][39m Building static entrypoints...
+[33m[1m16:33:46[22m [WARN] [vite][39m 
+/images/bg-abstract-streams.png referenced in /images/bg-abstract-streams.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[33m[1m16:33:46[22m [WARN] [vite][39m 
+/images/bg-devices-dark.png referenced in /images/bg-devices-dark.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[33m[1m16:33:46[22m [WARN] [vite][39m 
+/images/bg-living-room.png referenced in /images/bg-living-room.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[33m[1m16:33:46[22m [WARN] [vite][39m [33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+4  |  
+5  |  /* Google Fonts */
+6  |  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7  |  
+8  |  @layer base {[39m
+[2m16:33:46[22m [34m[vite][39m [32m✓ built in 1.21s[39m
+[2m16:33:46[22m [34m[build][39m [32m✓ Completed in 1.24s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m16:33:46[22m [34m[vite][39m transforming...
+[2m16:33:46[22m [34m[vite][39m [32m✓[39m 4 modules transformed.
+[2m16:33:46[22m [34m[vite][39m rendering chunks...
+[2m16:33:46[22m [34m[vite][39m [32m✓ built in 18ms[39m
+
+[42m[30m generating static routes [39m[49m
+[2m16:33:46[22m [32m▶[39m src/pages/descargar-apk.astro
+[2m16:33:46[22m   [34m└─[39m [2m/descargar-apk/index.html[22m [2m(+8ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/faq.astro
+[2m16:33:46[22m   [34m└─[39m [2m/faq/index.html[22m [2m(+3ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/instalar/android.astro
+[2m16:33:46[22m   [34m└─[39m [2m/instalar/android/index.html[22m [2m(+3ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/instalar/fire-stick.astro
+[2m16:33:46[22m   [34m└─[39m [2m/instalar/fire-stick/index.html[22m [2m(+3ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/instalar/google-tv.astro
+[2m16:33:46[22m   [34m└─[39m [2m/instalar/google-tv/index.html[22m [2m(+3ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/instalar/tv-box.astro
+[2m16:33:46[22m   [34m└─[39m [2m/instalar/tv-box/index.html[22m [2m(+2ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/instalar/xiaomi.astro
+[2m16:33:46[22m   [34m└─[39m [2m/instalar/xiaomi/index.html[22m [2m(+3ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/planes.astro
+[2m16:33:46[22m   [34m└─[39m [2m/planes/index.html[22m [2m(+3ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/privacidad.astro
+[2m16:33:46[22m   [34m└─[39m [2m/privacidad/index.html[22m [2m(+2ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/terminos.astro
+[2m16:33:46[22m   [34m└─[39m [2m/terminos/index.html[22m [2m(+3ms)[22m 
+[2m16:33:46[22m [32m▶[39m src/pages/index.astro
+[2m16:33:46[22m   [34m└─[39m [2m/index.html[22msite is not defined
+  [1mStack trace:[22m
+[2m    at Object.default (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/dist/pages/index.astro.mjs?time=1773092026625:54:202)
+    at createAstroComponentInstance (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/dist/chunks/astro/server_DUVuAe_m.mjs:1503:20)
+    at renderComponent (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/dist/chunks/astro/server_DUVuAe_m.mjs:1882:12)
+    at index (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/dist/chunks/astro/server_DUVuAe_m.mjs:139:12)
+    at renderToString (file:///C:/Users/dante/OneDrive/Documentos/Flujo-Landings(10)/FlujoTV_comunidad/node_modules/astro/dist/runtime/server/render/astro/render.js:14:32)[22m

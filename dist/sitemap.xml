@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://flujooficial.com/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-419" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-CO" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-CL" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-AR" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-EC" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-BO" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-VE" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-US" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-GT" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-CR" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-PA" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-HN" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-NI" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-SV" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-DO" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-UY" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-PY" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://flujooficial.com/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://flujooficial.com/"/>
+        <image:image>
+            <image:loc>https://flujooficial.com/images/hero-streaming.webp</image:loc>
+            <image:title>Flujo TV — Streaming Premium</image:title>
+            <image:caption>Plataforma de streaming con más de 3,000 canales en vivo, películas y series en 4K</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://flujooficial.com/images/logo_flujo.webp</image:loc>
+            <image:title>Logo Flujo TV</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://flujooficial.com/privacidad</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://flujooficial.com/terminos</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+</urlset>

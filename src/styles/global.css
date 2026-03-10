@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(6, 182, 212, 0.4);
+    color: #f8fafc;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #06b6d4;
+  }
+}
+
+@layer components {
+  /* Glass cards */
+  .glass-card {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(6, 182, 212, 0.35);
+    box-shadow: 0 8px 40px rgba(6, 182, 212, 0.15);
+    transform: translateY(-4px);
+  }
+
+  /* CTA Button */
+  .btn-ember {
+    background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #22d3ee 100%);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .btn-ember:hover {
+    box-shadow: 0 6px 30px rgba(6, 182, 212, 0.5);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+  }
+
+  /* Outline Button */
+  .btn-outline {
+    border: 2px solid rgba(6, 182, 212, 0.5);
+    color: #22d3ee;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .btn-outline:hover {
+    background: rgba(6, 182, 212, 0.1);
+    border-color: #06b6d4;
+    color: #67e8f9;
+  }
+
+  /* WhatsApp Button */
+  .btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .btn-whatsapp:hover {
+    background: #22c05e;
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Badge */
+  .badge {
+    background: rgba(6, 182, 212, 0.15);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    color: #22d3ee;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-cream-100 mb-4;
+  }
+
+  .section-subheading {
+    @apply text-lg sm:text-xl text-cream-400 max-w-3xl mx-auto;
+  }
+
+  /* Guide step */
+  .guide-step {
+    @apply flex gap-4 items-start p-4 rounded-xl transition-all duration-300;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(6, 182, 212, 0.08);
+  }
+
+  .guide-step:hover {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(6, 182, 212, 0.2);
+  }
+
+  .step-number {
+    @apply flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold;
+    background: linear-gradient(135deg, #0284c7, #06b6d4);
+    color: #ffffff;
+  }
+
+  /* Divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.3), transparent);
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+@layer utilities {
+  /* Fade-in animation on scroll (observer) */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Text gradient */
+  .text-gradient-ember {
+    background: linear-gradient(135deg, #06b6d4, #22d3ee, #67e8f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

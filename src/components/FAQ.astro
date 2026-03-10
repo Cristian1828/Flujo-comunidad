@@ -1,0 +1,67 @@
+---
+import { site } from '../config/site';
+---
+
+<section id="faq" class="py-16 sm:py-20 relative overflow-hidden">
+  <!-- Background image with gradient -->
+  <div class="absolute inset-0">
+    <img src="/images/bg-abstract.webp" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(15,23,42,0.93) 0%, rgba(15,23,42,0.8) 50%, rgba(15,23,42,0.93) 100%);"></div>
+  </div>
+
+  <div class="section-container relative z-10">
+    <div class="text-center mb-12 animate-on-scroll">
+      <h2 class="section-heading">Preguntas Frecuentes</h2>
+    </div>
+
+    <div class="max-w-2xl mx-auto space-y-3 animate-on-scroll">
+      {site.faq.map((item, idx) => (
+        <div class="faq-item glass-card overflow-hidden" style="background: rgba(15,23,42,0.5); backdrop-filter: blur(8px);">
+          <button class="faq-trigger w-full text-left p-5 flex items-center justify-between gap-4 cursor-pointer" aria-expanded="false">
+            <h3 class="font-heading font-medium text-sm text-cream-200 pr-4">{item.question}</h3>
+            <svg class="faq-chevron w-4 h-4 text-cream-500 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg>
+          </button>
+          <div class="faq-content overflow-hidden transition-all duration-300" style="max-height: 0;">
+            <div class="px-5 pb-5">
+              <p class="text-sm text-cream-400 leading-relaxed" style="border-top: 1px solid rgba(6,182,212,0.08); padding-top: 0.75rem;">{item.answer}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-trigger').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const content = item?.querySelector('.faq-content') as HTMLElement;
+      const chevron = item?.querySelector('.faq-chevron') as HTMLElement;
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      document.querySelectorAll('.faq-item').forEach(other => {
+        if (other !== item) {
+          const c = other.querySelector('.faq-content') as HTMLElement;
+          const ch = other.querySelector('.faq-chevron') as HTMLElement;
+          const t = other.querySelector('.faq-trigger');
+          if (c) c.style.maxHeight = '0';
+          if (ch) ch.style.transform = 'rotate(0deg)';
+          t?.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        chevron.style.transform = 'rotate(180deg)';
+        button.setAttribute('aria-expanded', 'true');
+      } else {
+        content.style.maxHeight = '0';
+        chevron.style.transform = 'rotate(0deg)';
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>

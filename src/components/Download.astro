@@ -1,0 +1,45 @@
+---
+import { site, getSupportWhatsappLink } from '../config/site';
+---
+
+<section id="descarga" class="py-16 sm:py-20 relative overflow-hidden">
+  <!-- Background image with heavy gradient overlay -->
+  <div class="absolute inset-0">
+    <img src="/images/bg-forums-dark.png" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.75) 50%, rgba(15,23,42,0.92) 100%);"></div>
+  </div>
+
+  <div class="section-container relative z-10">
+    <div class="animate-on-scroll">
+      <div class="glass-card p-8 sm:p-10 text-center max-w-2xl mx-auto" style="background: rgba(30,41,59,0.6); backdrop-filter: blur(16px);">
+        <h2 class="text-xl sm:text-2xl font-heading font-bold text-cream-100 mb-6">Descarga Rápida</h2>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div class="p-5 rounded-xl text-center relative overflow-hidden" style="background: linear-gradient(135deg, rgba(6,182,212,0.1), rgba(2,132,199,0.15)); border: 1px solid rgba(6,182,212,0.18);">
+            <p class="text-xs text-cream-500 mb-1">Código Downloader</p>
+            <p class="text-xs text-cream-500 mb-2">Fire Stick · Google TV · Xiaomi</p>
+            <p class="text-3xl font-heading font-bold text-gradient-ember tracking-widest">{site.download.firestickCode}</p>
+          </div>
+          <div class="p-5 rounded-xl flex flex-col items-center justify-center gap-3 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(6,182,212,0.1), rgba(2,132,199,0.15)); border: 1px solid rgba(6,182,212,0.18);">
+            <p class="text-xs text-cream-500">Celular · Tablet · TV Box</p>
+            <a href={site.download.mobileApkHref} target="_blank" rel="noopener" class="btn-ember text-sm py-2.5 px-5 inline-flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"></path></svg>
+              Descargar APK
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href={getSupportWhatsappLink()} target="_blank" rel="noopener" class="text-xs text-cream-500 hover:text-green-400 transition-colors inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+            ¿Necesitas ayuda? →
+          </a>
+          <a href={`https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent('Hola, quiero activar una cuenta de Flujo TV')}`} target="_blank" rel="noopener" class="text-xs text-cream-500 hover:text-ember-300 transition-colors inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path></svg>
+            ¿Quieres una cuenta? →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

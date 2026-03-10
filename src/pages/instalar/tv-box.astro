@@ -1,0 +1,220 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../config/site';
+
+const pageTitle = "Cómo Instalar Flujo TV en TV Box Android | Guía 2026";
+const pageDescription = "Aprende a instalar la APK oficial de Flujo TV en cualquier modelo de TV Box Android. Guía rápida paso a paso, descarga oficial y sin virus.";
+
+const guide = site.installGuides.find(g => g.id === 'tvbox');
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  <Navbar />
+
+  <main class="pt-24 pb-16 min-h-screen">
+    <div class="section-container">
+      
+      <!-- Breadcrumb -->
+      <nav class="flex text-cream-500 text-sm mb-8" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="hover:text-ember-400 transition-colors">Inicio</a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+              </svg>
+              <a href="/instalar" class="hover:text-ember-400 transition-colors">Guías de Instalación</a>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+              </svg>
+              <span class="text-cream-300">TV Box Android</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Content Grid -->
+      <div class="grid lg:grid-cols-3 gap-12">
+        
+        <!-- Main Content -->
+        <article class="lg:col-span-2">
+          <header class="mb-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ember-900/30 text-ember-400 text-sm font-medium border border-ember-500/20 mb-6">
+               Actualizado 2026
+            </div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-cream-100 leading-tight mb-6">
+              Instalar <span class="text-gradient-ember">Flujo TV</span> en TV Box Android
+            </h1>
+            <p class="text-lg text-cream-400 leading-relaxed">
+              Descarga e instala la última versión de Flujo TV en tu TV Box Android. 
+              Sin importar la marca o el modelo, esta guía universal te enseñará a descargar el APK oficial y disfrutar en minutos.
+            </p>
+          </header>
+
+          <!-- Video Tutorial -->
+          <div class="mb-12 glass-panel p-6 rounded-2xl border-l-4 border-l-ember-500 bg-gradient-to-br from-carbon-800 to-carbon-900">
+             <h2 class="text-xl font-bold text-cream-100 mb-4 flex items-center gap-2">
+                <svg class="w-6 h-6 text-ember-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"></path></svg>
+                Video Tutorial: Instalación en TV Box Android
+             </h2>
+             <p class="text-cream-400 mb-4 text-sm">Sigue este video paso a paso para instalar Flujo TV en tu TV Box Android:</p>
+             <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-cream-500/10" style="padding:56.25% 0 0 0;position:relative;">
+               <iframe src="https://player.vimeo.com/video/1171970313?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Guia Flujo TV Android"></iframe>
+             </div>
+          </div>
+
+          <!-- Quick Download CTA (For users who already know what to do) -->
+          <div class="mb-12 flex flex-col sm:flex-row items-center justify-between glass-panel p-6 rounded-2xl border border-ember-500/30 bg-gradient-to-r from-ember-900/20 to-carbon-900">
+             <div>
+               <h3 class="text-lg font-bold text-cream-100 mb-1">Descarga Directa</h3>
+               <p class="text-cream-400 text-sm">Si ya sabes instalar APKs, descarga directamente desde aquí:</p>
+             </div>
+             <a href="https://descargarflujotv.com/apk-tv" target="_blank" rel="noopener noreferrer" class="mt-4 sm:mt-0 inline-flex items-center gap-2 px-5 py-3 bg-ember-500 hover:bg-ember-400 text-white font-bold rounded-lg transition-all text-sm">
+               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+               Descargar APK
+             </a>
+          </div>
+
+          <!-- The Steps -->
+          <div class="space-y-8">
+            <h2 class="text-2xl font-bold text-cream-100 border-b border-cream-500/10 pb-4">Pasos de Instalación</h2>
+            
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-ember-600 flex items-center justify-center text-white font-bold text-lg">1</div>
+              <div>
+                <h3 class="text-xl font-bold text-cream-200 mb-2">Conectar a Internet y Abrir el Navegador</h3>
+                <p class="text-cream-400 leading-relaxed">
+                  Asegúrate de que tu TV Box esté conectada a internet. En la pantalla principal, busca la aplicación de navegador web (usualmente "Browser", "Chrome" o "Internet") y ábrela.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-ember-600 flex items-center justify-center text-white font-bold text-lg">2</div>
+              <div>
+                <h3 class="text-xl font-bold text-cream-200 mb-2">Descargar el archivo APK Oficial</h3>
+                <p class="text-cream-400 leading-relaxed">
+                  Usa el control remoto para ir a la barra superior de direcciones web. Borra todo lo que esté escrito e ingresa exactamente la siguiente ruta: <strong class="text-cream-200">descargarflujotv.com/apk-tv</strong>. Luego, presiona "Ir" o "Enter". La descarga comenzará automáticamente.
+                </p>
+              </div>
+            </div>
+
+            <!-- INJECTED CTA FOR SALES -->
+            <div class="glass-panel p-6 rounded-xl border border-ember-500/30 bg-gradient-to-r from-ember-900/40 to-carbon-900 my-8">
+              <div class="flex items-start gap-4">
+                <svg class="w-8 h-8 text-ember-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>
+                <div>
+                  <h4 class="text-lg font-bold text-cream-100 mb-2">¿Ya tienes cuenta oficial?</h4>
+                  <p class="text-cream-400 text-sm mb-4">La descarga es gratuita, pero necesitas una cuenta premium para acceder a los +3,000 canales, películas 4K y eventos deportivos Pague-Por-Ver.</p>
+                  <a href="/planes" class="text-ember-400 font-bold hover:text-ember-300 text-sm">Ver paquetes disponibles →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-ember-600 flex items-center justify-center text-white font-bold text-lg">3</div>
+              <div>
+                <h3 class="text-xl font-bold text-cream-200 mb-2">Permitir Instalación Desconocida (Opional)</h3>
+                <p class="text-cream-400 leading-relaxed">
+                  Si tu TV box es nueva, al abrir el archivo descargado podría mostrarte  un mensaje de seguridad "Por su seguridad, el teléfono/TV no tiene permitido instalar apps desconocidas...". Haz clic en <strong>Configuración</strong> y marca la casilla para <strong>Permitir desde esta fuente</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-ember-600 flex items-center justify-center text-white font-bold text-lg">4</div>
+              <div>
+                <h3 class="text-xl font-bold text-cream-200 mb-2">Instalar e Iniciar Sesión</h3>
+                <p class="text-cream-400 leading-relaxed">
+                  Haz clic en "Instalar", espera a que la barra de progreso termine y finalmente pulsa "Abrir". Accederás a la pantalla principal de Flujo TV donde solo debes ingresar el nombre de usuario y contraseña que te proporcionó nuestro soporte técnico.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="space-y-8">
+          
+          <!-- CTA Sidebar -->
+          <div class="glass-panel p-6 rounded-2xl border border-ember-500/20 text-center sticky top-28">
+            <h3 class="text-xl font-bold text-cream-100 mb-3">Obtén Flujo TV Hoy</h3>
+            <p class="text-sm text-cream-400 mb-6">Disfruta de la mejor televisión en vivo y contenido VOD premium sin contratos ni ataduras.</p>
+            <a href="/planes" class="btn-ember block w-full py-3 mb-4">Ver Ofertas 2026</a>
+            <p class="text-xs text-cream-500">Activación inmediata · Soporte 24/7</p>
+          </div>
+
+          <!-- Other Guides -->
+          <div class="glass-panel p-6 rounded-2xl border border-cream-500/10">
+            <h3 class="text-lg font-bold text-cream-100 mb-4">Otras Guías</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="/instalar/fire-stick" class="flex items-center gap-3 text-cream-400 hover:text-ember-400 transition-colors">
+                  <svg class="w-5 h-5 text-ember-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  <span class="text-sm font-medium">Instalar en Fire Stick</span>
+                </a>
+              </li>
+              <li>
+                <a href="/instalar/google-tv" class="flex items-center gap-3 text-cream-400 hover:text-ember-400 transition-colors">
+                  <svg class="w-5 h-5 text-ember-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  <span class="text-sm font-medium">Instalar en Google TV</span>
+                </a>
+              </li>
+              <li>
+                <a href="/instalar/android" class="flex items-center gap-3 text-cream-400 hover:text-ember-400 transition-colors">
+                  <svg class="w-5 h-5 text-ember-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                  <span class="text-sm font-medium">Instalar en Android</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </aside>
+      </div>
+
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<!-- HowTo Schema Specific for this page -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cómo instalar Flujo TV en TV Box Android",
+  "description": "Aprende a instalar la aplicación de Flujo TV en cualquier TV Box Android. Método directo y oficial.",
+  "image": `${site.canonical}/images/tvbox-setup.webp`,
+  "totalTime": "PT3M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Abrir el navegador",
+      "text": "Desde tu pantalla principal, busca y abre el navegador de internet integrado en tu TV Box.",
+      "url": `${site.canonical}/instalar/tv-box#paso1`
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Descargar el APK",
+      "text": "En la barra de direcciones del navegador ingresa descargarflujotv.com/apk-tv y presiona Enter.",
+      "url": `${site.canonical}/instalar/tv-box#paso2`
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Instalar aplicación",
+      "text": "Una vez finalizada la descarga, haz clic sobre el archivo descargado y presiona el botón Instalar.",
+      "url": `${site.canonical}/instalar/tv-box#paso3`
+    }
+  ]
+})} />

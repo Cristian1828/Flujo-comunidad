@@ -1,0 +1,260 @@
+---
+import { site } from '../config/site';
+---
+
+<section id="inicio" class="relative min-h-[85vh] flex items-center pt-24 pb-20 overflow-hidden">
+  <!-- Animated background -->
+  <div class="absolute inset-0">
+    <img src="/images/hero-portal-bg.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+    <div class="absolute inset-0 bg-gradient-to-b from-carbon-950/60 via-carbon-950/80 to-carbon-950"></div>
+  </div>
+
+  <!-- Animated floating particles (CSS only) -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+  </div>
+
+  <div class="section-container relative z-10 w-full">
+    <!-- Top badge -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ember-500/10 border border-ember-500/20">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+        </span>
+        <span class="text-cream-200 text-xs font-semibold tracking-wide">Servidores operando al 100% — Actualizado Marzo 2026</span>
+      </div>
+    </div>
+
+    <!-- Main heading -->
+    <div class="text-center max-w-4xl mx-auto mb-10">
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-heading font-extrabold leading-tight mb-6">
+        <span class="text-cream-50">Flujo</span><span class="text-gradient-ember">TV+</span>
+      </h1>
+      <p class="text-xl sm:text-2xl text-cream-300 font-light max-w-2xl mx-auto leading-relaxed">
+        Tu centro de guías, descargas y soporte. Todo lo que necesitas para tu experiencia de streaming.
+      </p>
+    </div>
+
+    <!-- Search bar -->
+    <div class="max-w-2xl mx-auto mb-16 relative group">
+      <div class="absolute -inset-1 bg-gradient-to-r from-ember-500/20 via-ember-400/10 to-ember-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="relative flex items-center bg-carbon-800/80 rounded-xl border border-cream-500/10 backdrop-blur-xl overflow-hidden shadow-2xl">
+        <svg class="w-5 h-5 text-cream-500 ml-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input 
+          type="text" 
+          placeholder="¿Qué necesitas? Ej: instalar en Fire Stick, error de conexión..." 
+          class="w-full px-4 py-5 bg-transparent text-cream-100 placeholder-cream-600 focus:outline-none text-base"
+          id="hero-search"
+        />
+        <button id="hero-search-btn" class="mr-2 px-6 py-2.5 bg-ember-500 hover:bg-ember-400 text-white rounded-lg font-semibold text-sm transition-all flex-shrink-0">
+          Buscar
+        </button>
+      </div>
+      <!-- Quick search suggestions -->
+      <div class="flex flex-wrap justify-center gap-2 mt-4">
+        <a href="/instalar/fire-stick" class="inline-flex items-center gap-1.5 text-xs text-cream-500 hover:text-ember-400 transition-colors px-3 py-1.5 rounded-full bg-carbon-800/50 border border-cream-500/5 hover:border-ember-500/20">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /></svg>
+          Fire Stick
+        </a>
+        <a href="/faq" class="inline-flex items-center gap-1.5 text-xs text-cream-500 hover:text-ember-400 transition-colors px-3 py-1.5 rounded-full bg-carbon-800/50 border border-cream-500/5 hover:border-ember-500/20">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126Z" /></svg>
+          Pantalla negra
+        </a>
+        <a href="/descargar-apk" class="inline-flex items-center gap-1.5 text-xs text-cream-500 hover:text-ember-400 transition-colors px-3 py-1.5 rounded-full bg-carbon-800/50 border border-cream-500/5 hover:border-ember-500/20">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+          Descargar APK
+        </a>
+        <a href="/faq" class="inline-flex items-center gap-1.5 text-xs text-cream-500 hover:text-ember-400 transition-colors px-3 py-1.5 rounded-full bg-carbon-800/50 border border-cream-500/5 hover:border-ember-500/20">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+          Se congela
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Access Dashboard Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-5xl mx-auto mb-16">
+      <a href="/instalar/fire-stick" class="quick-card group">
+        <div class="quick-card-icon bg-orange-500/10 text-orange-400 group-hover:bg-orange-500/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /></svg>
+        </div>
+        <span class="quick-card-label">Fire Stick</span>
+      </a>
+      <a href="/instalar/tv-box" class="quick-card group">
+        <div class="quick-card-icon bg-purple-500/10 text-purple-400 group-hover:bg-purple-500/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.125c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125Z" /></svg>
+        </div>
+        <span class="quick-card-label">TV Box</span>
+      </a>
+      <a href="/instalar/google-tv" class="quick-card group">
+        <div class="quick-card-icon bg-green-500/10 text-green-400 group-hover:bg-green-500/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" /></svg>
+        </div>
+        <span class="quick-card-label">Google TV</span>
+      </a>
+      <a href="/instalar/android" class="quick-card group">
+        <div class="quick-card-icon bg-sky-500/10 text-sky-400 group-hover:bg-sky-500/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+        </div>
+        <span class="quick-card-label">Android</span>
+      </a>
+      <a href="/descargar-apk" class="quick-card group">
+        <div class="quick-card-icon bg-ember-500/10 text-ember-400 group-hover:bg-ember-500/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+        </div>
+        <span class="quick-card-label">Descargar</span>
+      </a>
+      <a href="/faq" class="quick-card group">
+        <div class="quick-card-icon bg-amber-500/10 text-amber-400 group-hover:bg-amber-500/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+        </div>
+        <span class="quick-card-label">FAQ</span>
+      </a>
+    </div>
+
+    <!-- Live Stats bar -->
+    <div class="flex flex-wrap justify-center gap-6 sm:gap-10">
+      <div class="flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+        <div>
+          <p class="text-2xl font-heading font-bold text-cream-50" id="stat-users">12,847</p>
+          <p class="text-xs text-cream-500">usuarios activos</p>
+        </div>
+      </div>
+      <div class="h-10 w-px bg-cream-500/10 hidden sm:block"></div>
+      <div class="flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-ember-400"></div>
+        <div>
+          <p class="text-2xl font-heading font-bold text-cream-50">99.8%</p>
+          <p class="text-xs text-cream-500">uptime servidores</p>
+        </div>
+      </div>
+      <div class="h-10 w-px bg-cream-500/10 hidden sm:block"></div>
+      <div class="flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-purple-400"></div>
+        <div>
+          <p class="text-2xl font-heading font-bold text-cream-50">24/7</p>
+          <p class="text-xs text-cream-500">soporte técnico</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .quick-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 0.75rem;
+    border-radius: 1rem;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.06);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .quick-card:hover {
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(6, 182, 212, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.1);
+  }
+  .quick-card-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .quick-card-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    text-align: center;
+  }
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(6, 182, 212, 0.15);
+  }
+  .particle-1 {
+    width: 300px; height: 300px;
+    top: 10%; left: -5%;
+    animation: float1 20s ease-in-out infinite;
+    filter: blur(80px);
+  }
+  .particle-2 {
+    width: 250px; height: 250px;
+    top: 60%; right: -10%;
+    animation: float2 25s ease-in-out infinite;
+    filter: blur(100px);
+    background: rgba(139, 92, 246, 0.1);
+  }
+  .particle-3 {
+    width: 200px; height: 200px;
+    bottom: 5%; left: 40%;
+    animation: float3 18s ease-in-out infinite;
+    filter: blur(60px);
+  }
+  @keyframes float1 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -50px); }
+    66% { transform: translate(-20px, 20px); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-40px, 30px); }
+    66% { transform: translate(20px, -40px); }
+  }
+  @keyframes float3 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(50px, -30px); }
+  }
+</style>
+
+<script>
+  // Animate the user count
+  const statEl = document.getElementById('stat-users');
+  if (statEl) {
+    const base = 12400;
+    const update = () => {
+      const variation = Math.floor(Math.random() * 900) + base;
+      statEl.textContent = variation.toLocaleString('es-ES');
+    };
+    update();
+    setInterval(update, 8000);
+  }
+
+  // Search function
+  function doSearch() {
+    const searchInput = document.getElementById('hero-search') as HTMLInputElement;
+    if (!searchInput) return;
+    const q = searchInput.value.trim().toLowerCase();
+    if (!q) return;
+    if (q.includes('fire') || q.includes('stick')) window.location.href = '/instalar/fire-stick';
+    else if (q.includes('tv box') || q.includes('tvbox')) window.location.href = '/instalar/tv-box';
+    else if (q.includes('google') || q.includes('chromecast')) window.location.href = '/instalar/google-tv';
+    else if (q.includes('android') || q.includes('celular') || q.includes('tablet') || q.includes('telefono')) window.location.href = '/instalar/android';
+    else if (q.includes('xiaomi') || q.includes('mi stick')) window.location.href = '/instalar/xiaomi';
+    else if (q.includes('descargar') || q.includes('apk') || q.includes('download')) window.location.href = '/descargar-apk';
+    else if (q.includes('plan') || q.includes('precio') || q.includes('comprar') || q.includes('activar')) window.location.href = '/planes';
+    else if (q.includes('faq') || q.includes('pregunta')) window.location.href = '/faq';
+    else window.location.href = '/faq';
+  }
+
+  // Enter key
+  const searchInput = document.getElementById('hero-search') as HTMLInputElement;
+  searchInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') doSearch();
+  });
+
+  // Buscar button click
+  const searchBtn = document.getElementById('hero-search-btn');
+  searchBtn?.addEventListener('click', () => doSearch());
+</script>

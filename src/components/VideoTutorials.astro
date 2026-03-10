@@ -1,0 +1,68 @@
+---
+import { site } from '../config/site';
+---
+
+<section id="tutoriales" class="py-16 sm:py-20 relative">
+  <div class="section-container relative z-10">
+    <div class="text-center mb-12 animate-on-scroll">
+      <h2 class="section-heading">Video Tutoriales</h2>
+      <p class="text-cream-400 mt-3 max-w-xl mx-auto">Sigue la instalación paso a paso en video</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto animate-on-scroll">
+      <!-- Google TV / Chromecast -->
+      <div class="glass-card overflow-hidden">
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(2,132,199,0.3));">
+              <svg class="w-4.5 h-4.5 text-ember-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-semibold text-cream-100">Google TV / Chromecast</h3>
+              <p class="text-xs text-cream-500">Tutorial de instalación</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden" style="border: 1px solid rgba(6,182,212,0.1);">
+            <div style="padding-top: 56.25%; position: relative; background: #0f172a;">
+              <iframe 
+                src={`https://fast.wistia.net/embed/iframe/${site.videos.googleTV.hombre}?videoFoam=true`}
+                title="Guía Flujo TV Google TV / Chromecast"
+                allow="autoplay; fullscreen"
+                allowfullscreen
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Android TV -->
+      <div class="glass-card overflow-hidden">
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(2,132,199,0.3));">
+              <svg class="w-4.5 h-4.5 text-ember-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.125c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125Z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-semibold text-cream-100">Android TV</h3>
+              <p class="text-xs text-cream-500">Tutorial de instalación</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden" style="border: 1px solid rgba(6,182,212,0.1);">
+            <div style="padding-top: 56.25%; position: relative; background: #0f172a;">
+              <iframe 
+                src={`https://fast.wistia.net/embed/iframe/${site.videos.androidTV.hombre}?videoFoam=true`}
+                title="Guía Flujo TV Android TV"
+                allow="autoplay; fullscreen"
+                allowfullscreen
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
