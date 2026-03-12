@@ -1,8 +1,9 @@
-﻿// Configuración del sitio — FlujoTV Guías y Comunidad
+// Configuración del sitio — FlujoTV Guías y Comunidad
 export const site = {
   domain: 'miflujotvplus.com',
   canonical: 'https://miflujotvplus.com',
   whatsappNumber: '51914326729',
+  url: 'https://miflujotvplus.com',
   email: 'soporte@flujooficial.com',
 
   download: {
