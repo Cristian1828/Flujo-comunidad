@@ -42,77 +42,77 @@
     </url>
     <!-- GUÍAS DE INSTALACIÓN (Hub) -->
     <url>
-        <loc>https://miflujotvplus.com/instalar</loc>
+        <loc>https://miflujotvplus.com/instalar/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <!-- Fire Stick -->
     <url>
-        <loc>https://miflujotvplus.com/instalar/fire-stick</loc>
+        <loc>https://miflujotvplus.com/instalar/fire-stick/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <!-- Google TV -->
     <url>
-        <loc>https://miflujotvplus.com/instalar/google-tv</loc>
+        <loc>https://miflujotvplus.com/instalar/google-tv/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <!-- TV Box Android -->
     <url>
-        <loc>https://miflujotvplus.com/instalar/tv-box</loc>
+        <loc>https://miflujotvplus.com/instalar/tv-box/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <!-- Android / Celular -->
     <url>
-        <loc>https://miflujotvplus.com/instalar/android</loc>
+        <loc>https://miflujotvplus.com/instalar/android/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <!-- Xiaomi -->
     <url>
-        <loc>https://miflujotvplus.com/instalar/xiaomi</loc>
+        <loc>https://miflujotvplus.com/instalar/xiaomi/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <!-- FAQ -->
     <url>
-        <loc>https://miflujotvplus.com/faq</loc>
+        <loc>https://miflujotvplus.com/faq/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <!-- Descargar APK -->
     <url>
-        <loc>https://miflujotvplus.com/descargar-apk</loc>
+        <loc>https://miflujotvplus.com/descargar-apk/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <!-- Planes -->
     <url>
-        <loc>https://miflujotvplus.com/planes</loc>
+        <loc>https://miflujotvplus.com/planes/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <!-- Privacidad -->
     <url>
-        <loc>https://miflujotvplus.com/privacidad</loc>
+        <loc>https://miflujotvplus.com/privacidad/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
     <!-- Términos -->
     <url>
-        <loc>https://miflujotvplus.com/terminos</loc>
+        <loc>https://miflujotvplus.com/terminos/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
