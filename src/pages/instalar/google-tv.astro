@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { site } from '../../config/site';
 
 const pageTitle = "Cómo Instalar Flujo TV en Google TV y Chromecast | Guía 2026";
-const pageDescription = "Tutorial oficial para descargar e instalar la app de Flujo TV en Chromecast con Google TV. Utiliza el código Downloader 3912363 para una instalación rápida y segura.";
+const pageDescription = "Tutorial oficial para descargar e instalar la app de Flujo TV en Chromecast con Google TV. Utiliza el código Downloader 5756106 para una instalación rápida y segura.";
 
 const guide = site.installGuides.find(g => g.id === 'googletv');
 ---
@@ -74,8 +74,18 @@ const guide = site.installGuides.find(g => g.id === 'googletv');
                 Instalación Guiada en Video
              </h2>
              <p class="text-cream-400 mb-4 text-sm">Mira cómo autorizamos los permisos especiales en Google TV e instalamos Flujo TV en menos de 3 minutos:</p>
-             <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-cream-500/10" style="padding:56.25% 0 0 0;position:relative;">
-               <iframe src="https://player.vimeo.com/video/1171969551?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Guia Flujo Google TV"></iframe>
+             <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-cream-500/10">
+               <script src="https://fast.wistia.com/embed/medias/xw1xedf4qg.jsonp" async></script>
+               <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+               <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                 <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                   <div class="wistia_embed wistia_async_xw1xedf4qg seo=true videoFoam=true" style="height:100%;position:relative;width:100%">
+                     <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                       <img src={`https://fast.wistia.com/embed/medias/xw1xedf4qg/swatch`} style="filter:blur(5px);height:100%;object-fit:cover;width:100%;" alt="" aria-hidden="true" />
+                     </div>
+                   </div>
+                 </div>
+               </div>
              </div>
           </div>
 
@@ -88,7 +98,7 @@ const guide = site.installGuides.find(g => g.id === 'googletv');
               <div>
                 <h3 class="text-xl font-bold text-cream-200 mb-2">Modo Desarrollador</h3>
                 <p class="text-cream-400 leading-relaxed">
-                  Para permitir apps externas en Google TV, ve a <strong class="text-cream-200">Configuración → Sistema → Acerca de</strong>. Busca la opción "Compilación del SO de Android TV" (al final de la lista) y presiona "Ok" en tu control remoto repetidas veces hasta que veas el mensaje "¡Ya eres un desarrollador!".
+                  Para permitir apps externas en Google TV, ve a <strong class="text-cream-200">Configuración ? Sistema ? Acerca de</strong>. Busca la opción "Compilación del SO de Android TV" (al final de la lista) y presiona "Ok" en tu control remoto repetidas veces hasta que veas el mensaje "¡Ya eres un desarrollador!".
                 </p>
               </div>
             </div>
@@ -99,7 +109,7 @@ const guide = site.installGuides.find(g => g.id === 'googletv');
               <div>
                 <h4 class="text-lg font-bold text-cream-100 mb-2"> Aprovecha Nuestra Oferta</h4>
                 <p class="text-cream-400 text-sm mb-3">Obtén 2 meses gratis al comprar tu plan anual. Disfruta Flujo TV en tu Google TV, Celular y otra pantalla adicional (3 en total).</p>
-                <a href="/planes/" class="text-ember-400 font-bold hover:text-ember-300 text-sm">Ver Tarifas 2026 →</a>
+                <a href="/planes/" class="text-ember-400 font-bold hover:text-ember-300 text-sm">Ver Tarifas 2026 ?</a>
               </div>
             </div>
 
@@ -118,7 +128,7 @@ const guide = site.installGuides.find(g => g.id === 'googletv');
               <div>
                 <h3 class="text-xl font-bold text-cream-200 mb-2">Permisos Ocultos</h3>
                 <p class="text-cream-400 leading-relaxed">
-                  Antes de abrir Downloader, debes darle permiso para instalar aplicaciones. Ve a <strong class="text-cream-200">Configuración → Apps → Seguridad y Restricciones → Instalar aplicaciones desconocidas</strong>. Busca "Downloader" en esa lista y activa el interruptor.
+                  Antes de abrir Downloader, debes darle permiso para instalar aplicaciones. Ve a <strong class="text-cream-200">Configuración ? Apps ? Seguridad y Restricciones ? Instalar aplicaciones desconocidas</strong>. Busca "Downloader" en esa lista y activa el interruptor.
                 </p>
               </div>
             </div>
@@ -217,7 +227,7 @@ const guide = site.installGuides.find(g => g.id === 'googletv');
     {
       "@type": "HowToStep",
       "name": "Ingresa el Código Downloader de Flujo TV",
-      "text": "Abre Downloader e introduce el código 3912363 para descargar el archivo APK seguro e instálalo.",
+      "text": "Abre Downloader e introduce el código 5756106 para descargar el archivo APK seguro e instálalo.",
       "url": `${site.canonical}/instalar/google-tv#paso4`
     }
   ]

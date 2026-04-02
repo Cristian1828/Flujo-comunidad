@@ -69,8 +69,18 @@ const guide = site.installGuides.find(g => g.id === 'tvbox');
                 Video Tutorial: Instalación en TV Box Android
              </h2>
              <p class="text-cream-400 mb-4 text-sm">Sigue este video paso a paso para instalar Flujo TV en tu TV Box Android:</p>
-             <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-cream-500/10" style="padding:56.25% 0 0 0;position:relative;">
-               <iframe src="https://player.vimeo.com/video/1171970313?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Guia Flujo TV Android"></iframe>
+             <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-cream-500/10">
+               <script src="https://fast.wistia.com/embed/medias/rng7d90adc.jsonp" async></script>
+               <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+               <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                 <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                   <div class="wistia_embed wistia_async_rng7d90adc seo=true videoFoam=true" style="height:100%;position:relative;width:100%">
+                     <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                       <img src={`https://fast.wistia.com/embed/medias/rng7d90adc/swatch`} style="filter:blur(5px);height:100%;object-fit:cover;width:100%;" alt="" aria-hidden="true" />
+                     </div>
+                   </div>
+                 </div>
+               </div>
              </div>
           </div>
 
@@ -93,9 +103,9 @@ const guide = site.installGuides.find(g => g.id === 'tvbox');
             <div class="flex gap-4">
               <div class="flex-shrink-0 w-10 h-10 rounded-full bg-ember-600 flex items-center justify-center text-white font-bold text-lg">1</div>
               <div>
-                <h3 class="text-xl font-bold text-cream-200 mb-2">Conectar a Internet y Abrir el Navegador</h3>
+                <h3 class="text-xl font-bold text-cream-200 mb-2">Conectar a Internet e Instalar Downloader</h3>
                 <p class="text-cream-400 leading-relaxed">
-                  Asegúrate de que tu TV Box esté conectada a internet. En la pantalla principal, busca la aplicación de navegador web (usualmente "Browser", "Chrome" o "Internet") y ábrela.
+                  Asegúrate de que tu TV Box esté conectada a internet. Luego abre la tienda de aplicaciones de tu dispositivo e instala la app <strong class="text-cream-200">Downloader</strong>.
                 </p>
               </div>
             </div>
@@ -105,7 +115,7 @@ const guide = site.installGuides.find(g => g.id === 'tvbox');
               <div>
                 <h3 class="text-xl font-bold text-cream-200 mb-2">Descargar el archivo APK Oficial</h3>
                 <p class="text-cream-400 leading-relaxed">
-                  Usa el control remoto para ir a la barra superior de direcciones web. Borra todo lo que esté escrito e ingresa exactamente la siguiente ruta: <strong class="text-cream-200">descargarflujotv.com/apk-tv</strong>. Luego, presiona "Ir" o "Enter". La descarga comenzará automáticamente.
+                  Abre Downloader e ingresa el código oficial <strong class="text-cream-200">5756106</strong>. Presiona "Go" para iniciar la descarga del APK y continuar con la instalación.
                 </p>
               </div>
             </div>
@@ -117,7 +127,7 @@ const guide = site.installGuides.find(g => g.id === 'tvbox');
                 <div>
                   <h4 class="text-lg font-bold text-cream-100 mb-2">¿Ya tienes cuenta oficial?</h4>
                   <p class="text-cream-400 text-sm mb-4">La descarga es gratuita, pero necesitas una cuenta premium para acceder a los +3,000 canales, películas 4K y eventos deportivos Pague-Por-Ver.</p>
-                  <a href="/planes/" class="text-ember-400 font-bold hover:text-ember-300 text-sm">Ver paquetes disponibles →</a>
+                  <a href="/planes/" class="text-ember-400 font-bold hover:text-ember-300 text-sm">Ver paquíetes disponibles ?</a>
                 </div>
               </div>
             </div>
@@ -152,7 +162,7 @@ const guide = site.installGuides.find(g => g.id === 'tvbox');
             <h3 class="text-xl font-bold text-cream-100 mb-3">Obtén Flujo TV Hoy</h3>
             <p class="text-sm text-cream-400 mb-6">Disfruta de la mejor televisión en vivo y contenido VOD premium sin contratos ni ataduras.</p>
             <a href="/planes/" class="btn-ember block w-full py-3 mb-4">Ver Ofertas 2026</a>
-            <p class="text-xs text-cream-500">Activación inmediata · Soporte 24/7</p>
+            <p class="text-xs text-cream-500">Activación inmediata - Soporte 24/7</p>
           </div>
 
           <!-- Other Guides -->
