@@ -286,7 +286,7 @@ export const site = {
     },
     {
       question: '¿En qué dispositivos puedo instalar Flujo TV?',
-      answer: 'Flujo TV es compatible con cualquier dispositivo que tenga sistema Android: Amazon Fire Stick, TV Box, Google TV (Chromecast), Xiaomi Mi Stick, celulares Android y tablets Android. No es compatible con iOS (iPhone/iPad), Roku ni Smart TVs Samsung/LG de forma nativa, pero puedes conectar un TV Box o Fire Stick a estos televisores.',
+      answer: 'Flujo TV es compatible con dispositivos Android: Amazon Fire Stick, TV Box, Google TV (Chromecast), Xiaomi Mi Stick, celulares Android y tablets Android. En Smart TV Samsung/LG se requiere un dispositivo externo como TV Box o Fire Stick.',
     },
     {
       question: '¿Cómo descargo la app de Flujo TV?',
