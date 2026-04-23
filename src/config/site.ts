@@ -7,8 +7,8 @@ export const site = {
   email: 'soporte@flujooficial.com',
 
   download: {
-    firestickCode: '7132299',
-    mobileApkHref: 'https://github.com/Cristian1828/apk-flujoTV/releases/download/v1.0/flujo-premium.apk',
+    firestickCode: '9249124',
+    mobileApkHref: 'https://github.com/Cristian1828/apk-flujoTV/releases/download/v2.0/flujo_mobile_v8.4.3.apk',
   },
 
   // Videos tutoriales Wistia
@@ -26,7 +26,7 @@ export const site = {
   brand: {
     name: 'FlujoTV+',
     shortName: 'FlujoTV+',
-    description: 'Centro oficial de guías, soporte técnico y descargas de FlujoTV+. Aprende a instalar en Fire Stick, TV Box, Google TV, Chromecast y Android. Más de 3,000 canales en vivo, películas y series en Full HD y 4K con tecnología Anti-Freeze.',
+    description: 'Centro oficial de guías, soporte técnico y descargas de FlujoTV+. Aprende a instalar en Fire Stick, TV Box, Google TV, Chromecast y Android. Más de 3,000 canales en vivo, películas y series en Full HD y 4K con tecnología Anti-Freeze. Nueva versión actualizada 8.4.3.',
   },
 
   pricing: {
@@ -78,7 +78,7 @@ export const site = {
 
   seo: {
     title: 'Flujo TV Oficial | Guía de Instalación, Soporte Técnico y Descarga APK — Fire Stick, TV Box, Google TV, Android',
-    description: 'Centro oficial de Flujo TV: guías paso a paso para instalar en Fire Stick, TV Box, Google TV, Chromecast y Android. Soporte técnico 24/7 por WhatsApp. Descarga APK actualizado y código Downloader 7132299. +3,000 canales en vivo, películas y series 4K.',
+    description: 'Centro oficial de Flujo TV: guías paso a paso para instalar en Fire Stick, TV Box, Google TV, Chromecast y Android. Soporte técnico 24/7 por WhatsApp. Descarga APK actualizado y código Downloader 9249124. +3,000 canales en vivo, películas y series 4K. Nueva versión actualizada 8.4.3.',
     keywords: [
       // --- 1. GUÍAS E INSTALACIÓN (prioridad máxima) ---
       'guia instalacion flujo tv', 'como instalar flujo tv',
@@ -106,7 +106,7 @@ export const site = {
       'flujo tv apk 2026', 'flujo tv apk download', 'flujo tv apk gratis',
       'flujo tv apk android', 'flujo tv apk fire stick', 'flujo tv apk tv box',
       'flujo tv codigo downloader', 'flujo tv apk codigo downloader',
-      'codigo downloader flujo tv', 'downloader codigo 7132299',
+      'codigo downloader flujo tv', 'downloader codigo 9249124',
       'descargar flujo tv', 'download flujo tv',
 
       // --- 4. MARCA ---
@@ -161,12 +161,15 @@ export const site = {
       'comprar paneles flujo tv', 'negocio flujo tv',
 
       // --- 11. PROMOCIONES Y ACTUALIZACIONES ---
-      'ultima version de flujo tv', 'flujo tv version 8.4.2', 'flujo tv 8.4.2',
-      'descargar flujo tv 8.4.2', 'actualizar flujo tv', 'actualizacion flujo tv',
+      'ultima version de flujo tv', 'flujo tv version 8.4.3', 'flujo tv 8.4.3',
+      'descargar flujo tv 8.4.3', 'actualizar flujo tv', 'actualizacion flujo tv',
       'flujo tv comunidad', 'foro flujo tv', 'ayuda foro flujo tv',
       'flujo tv barato', 'promociones flujo tv', 'descuentos flujo tv',
       'oferta flujo tv', 'flujo tv economico',
-    ],
+    ,
+            // --- Nueva Versión SEO ---
+            'nueva version', 'version actualizada', 'version 8.4.3', 'nueva version actualizada 8.4.3'
+        ],
     ogImage: '/images/hero-streaming.webp',
     twitterHandle: '@flujooficial',
   },
@@ -212,7 +215,7 @@ export const site = {
       steps: [
         'Enciende tu Fire Stick y ve a Configuración → Mi Fire TV → Opciones para desarrolladores → Instalar apps desconocidas → Activar',
         'Desde la pantalla principal, busca la app "Downloader" en la tienda de Amazon y descárgala',
-        'Abre Downloader e ingresa el código: 7132299',
+        'Abre Downloader e ingresa el código: 9249124',
         'Se descargará e instalará la app automáticamente. Ábrela y activa con tus credenciales',
         'Si necesitas ayuda con la activación, contáctanos por WhatsApp',
       ],
@@ -225,7 +228,7 @@ export const site = {
       steps: [
         'Conecta tu TV Box a tu televisor y asegúrate de tener conexión a internet',
         'Instala la app "Downloader" desde la tienda de aplicaciones de tu TV Box',
-        'Abre Downloader e ingresa el código: 7132299',
+        'Abre Downloader e ingresa el código: 9249124',
         'Descarga el APK oficial e instálalo',
         'Abre Flujo TV e ingresa tus credenciales de activación',
       ],
@@ -238,7 +241,7 @@ export const site = {
       steps: [
         'Desde tu Google TV, ve a Configuración → Seguridad y restricciones → Fuentes desconocidas → Activar',
         'Descarga la app "Downloader" desde Google Play Store',
-        'Abre Downloader e ingresa el código: 7132299',
+        'Abre Downloader e ingresa el código: 9249124',
         'El archivo APK se descargará automáticamente. Instálalo cuando se solicite',
         'Abre Flujo TV e ingresa tus datos de activación',
       ],
@@ -264,7 +267,7 @@ export const site = {
       steps: [
         'En tu Xiaomi Stick, ve a Configuración → Seguridad → Fuentes desconocidas → Activar',
         'Descarga la app "Downloader" desde Google Play Store en tu dispositivo',
-        'Abre Downloader e ingresa el código: 7132299',
+        'Abre Downloader e ingresa el código: 9249124',
         'La aplicación se descargará e instalará automáticamente',
         'Abre Flujo TV, activa con tus credenciales y listo',
       ],
@@ -290,7 +293,7 @@ export const site = {
     },
     {
       question: '¿Cómo descargo la app de Flujo TV?',
-      answer: 'Para Fire Stick, Google TV y Xiaomi Stick: usa la app Downloader con el código 7132299. Para celulares y tablets Android: descarga el APK directamente desde nuestro enlace oficial. Para TV Box: descarga desde el navegador integrado. Consulta nuestras guías detalladas más arriba.',
+      answer: 'Para Fire Stick, Google TV y Xiaomi Stick: usa la app Downloader con el código 9249124. Para celulares y tablets Android: descarga el APK directamente desde nuestro enlace oficial. Para TV Box: descarga desde el navegador integrado. Consulta nuestras guías detalladas más arriba.',
     },
     {
       question: '¿Cuántas pantallas puedo usar al mismo tiempo?',
