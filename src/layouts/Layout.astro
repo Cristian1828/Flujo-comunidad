@@ -137,20 +137,6 @@ const softwareSchema = {
   screenshot: `${site.canonical}/images/hero-streaming.webp`,
 };
 
-// Schema.org FAQPage
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: site.faq.map(item => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer
-    }
-  }))
-};
-
 // Schema.org HowTo (install guide)
 const howToSchema = {
   '@context': 'https://schema.org',
@@ -298,7 +284,6 @@ import '../styles/global.css';
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
-    {isHome && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
     {isHome && <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />}
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
