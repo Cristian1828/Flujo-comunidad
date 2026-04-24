@@ -77,8 +77,8 @@ export const site = {
   },
 
   seo: {
-    title: 'Flujo TV Oficial | Guía de Instalación, Soporte Técnico y Descarga APK — Fire Stick, TV Box, Google TV, Android',
-    description: 'Centro oficial de Flujo TV: guías paso a paso para instalar en Fire Stick, TV Box, Google TV, Chromecast y Android. Soporte técnico 24/7 por WhatsApp. Descarga APK actualizado y código Downloader 9249124. +3,000 canales en vivo, películas y series 4K. Nueva versión actualizada 8.4.3.',
+    title: 'FlujoTV+ · Guías, APK y Soporte · Todo en Un Lugar',
+    description: 'FlujoTV+: todas las guías de instalación, descarga APK oficial y soporte técnico en un solo lugar. Código 9249124. Fire Stick, TV Box y Android.',
     keywords: [
       // --- 1. GUÍAS E INSTALACIÓN (prioridad máxima) ---
       'guia instalacion flujo tv', 'como instalar flujo tv',
