@@ -46,7 +46,7 @@ import { site, getWhatsappLink } from '../config/site';
             ))}
           </div>
 
-          <a href={plan.paypalUrl} target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer" class={`w-full text-center block text-xs py-2.5 rounded-lg font-semibold transition-all ${plan.highlight ? 'btn-ember' : 'btn-outline'}`}>
+          <a href={`/checkout?plan=${plan.id}`} class={`w-full text-center block text-xs py-2.5 rounded-lg font-semibold transition-all ${plan.highlight ? 'btn-ember' : 'btn-outline'}`}>
             Contratar
           </a>
         </div>

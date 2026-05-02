@@ -1,488 +1,441 @@
 ---
-// ── Configuración de esta landing ──────────────────────────────────────────
+import Layout from '../layouts/Layout.astro';
+import { site } from '../config/site';
+
 const BRAND   = 'netvantage';
-const COUNTRY = 'XX';
-const API_URL = import.meta.env.PUBLIC_API_URL ?? 'https://flujo-backend-production.up.railway.app';
-// ───────────────────────────────────────────────────────────────────────────
+const COUNTRY = 'US';
+const API_URL = import.meta.env.PUBLIC_API_URL ?? 'https://api.optimait.site';
+
+const WA_NUMBER = site.whatsappNumber;
+
+const PLAN_MONTHS_MAP: Record<string, number> = {
+  '1m': 1, '3m': 3, '6m': 7, '12m': 14,
+};
+
+const PAYPAL_LINKS: Record<string, string> = {
+  '1m':  site.pricing.plans.find(p => p.id === '1m')!.paypalUrl,
+  '3m':  site.pricing.plans.find(p => p.id === '3m')!.paypalUrl,
+  '6m':  site.pricing.plans.find(p => p.id === '6m')!.paypalUrl,
+  '12m': site.pricing.plans.find(p => p.id === '12m')!.paypalUrl,
+};
+
+const PLANS_DATA = site.pricing.plans.map(p => ({
+  id:    p.id,
+  name:  p.name,
+  price: p.price,
+  bonus: p.id === '6m'  ? '+1 Mes Gratis'
+       : p.id === '12m' ? '+2 Meses Gratis'
+       : null,
+}));
+
+const defaultPlan = site.pricing.plans[0];
 ---
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="referrer" content="no-referrer" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>Activar Membresía · Flujo TV</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #060a10;
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem 3rem;
-    }
-    .wrap { width: 100%; max-width: 440px; }
 
-    /* Header */
-    .header { text-align: center; margin-bottom: 1.5rem; }
-    .header h1 { font-size: 1.5rem; font-weight: 800; }
-    .header p  { color: #94a3b8; font-size: .875rem; margin-top: .25rem; }
+<Layout
+  title="Activar Plan · FlujoTV+"
+  description="Activa tu membresía FlujoTV+. Streaming premium sin contratos. Activación inmediata."
+  noIndex={true}
+>
+  <main class="co-page">
 
-    /* Card */
-    .card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 1.25rem;
-      padding: 1.25rem;
-      margin-bottom: 1rem;
-    }
-    .card-title {
-      font-size: .7rem; font-weight: 700; letter-spacing: .08em;
-      text-transform: uppercase; color: #64748b; margin-bottom: 1rem;
-    }
+    <div class="co-wrap">
 
-    /* Plans */
-    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: .625rem; }
-    .plan {
-      background: rgba(255,255,255,.03);
-      border: 1.5px solid rgba(255,255,255,.08);
-      border-radius: .875rem;
-      padding: .875rem .75rem;
-      cursor: pointer;
-      transition: all .15s;
-      text-align: left;
-    }
-    .plan:hover { border-color: rgba(249,115,22,.4); }
-    .plan.selected {
-      background: rgba(249,115,22,.1);
-      border-color: rgba(249,115,22,.6);
-      box-shadow: 0 0 0 2px rgba(249,115,22,.2);
-    }
-    .plan-label {
-      font-size: .65rem; font-weight: 700; letter-spacing: .06em;
-      text-transform: uppercase; color: #64748b; margin-bottom: .2rem;
-    }
-    .plan.selected .plan-label { color: #fb923c; }
-    .plan-price { font-size: 1.1rem; font-weight: 800; }
-    .plan-per { font-size: .65rem; color: #64748b; margin-top: .15rem; }
-    .plan-method { display: flex; align-items: center; gap: .375rem; margin-top: .5rem; color: #64748b; font-size: .7rem; }
+      <a href="/" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Volver al inicio
+      </a>
 
-    /* Form */
-    .field { margin-bottom: 1rem; }
-    .field label {
-      display: block; font-size: .75rem; font-weight: 600;
-      color: #94a3b8; margin-bottom: .375rem;
-    }
-    .field label span { font-weight: 400; color: #475569; }
-    .field input {
-      width: 100%; height: 2.75rem;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: .75rem;
-      padding: 0 .875rem;
-      color: #fff;
-      font-size: .875rem;
-      outline: none;
-      transition: border-color .15s;
-      -webkit-appearance: none;
-    }
-    .field input:focus { border-color: rgba(249,115,22,.5); }
-    .field input.ok   { border-color: rgba(34,197,94,.5); }
-    .field input.err  { border-color: rgba(239,68,68,.5); }
-    .field-hint { font-size: .7rem; margin-top: .3rem; }
-    .field-hint.ok  { color: #22c55e; }
-    .field-hint.err { color: #ef4444; }
-    .field-hint.checking { color: #94a3b8; }
-
-    /* Button */
-    .btn {
-      display: block; width: 100%;
-      padding: .9rem;
-      background: #f97316;
-      border: none; border-radius: 1rem;
-      color: #fff; font-size: 1rem; font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 8px 20px -4px rgba(249,115,22,.45);
-      transition: background .15s, transform .1s;
-    }
-    .btn:hover:not(:disabled) { background: #ea6b00; transform: translateY(-1px); }
-    .btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
-
-    /* Error box */
-    .error-box {
-      background: rgba(239,68,68,.1);
-      border: 1px solid rgba(239,68,68,.3);
-      border-radius: .75rem;
-      padding: .75rem 1rem;
-      color: #f87171;
-      font-size: .8rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Done screen */
-    .done { text-align: center; padding: 1rem 0; }
-    .done .emoji { font-size: 3.5rem; margin-bottom: 1rem; }
-    .done h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: .5rem; }
-    .done p  { color: #94a3b8; font-size: .875rem; margin-bottom: 1.5rem; }
-    .summary {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 1rem;
-      padding: 1rem;
-      text-align: left;
-      margin-bottom: 1.25rem;
-    }
-    .summary-row {
-      display: flex; justify-content: space-between;
-      font-size: .825rem; padding: .3rem 0;
-    }
-    .summary-row span:first-child { color: #64748b; }
-    .summary-row span:last-child  { font-weight: 600; }
-
-    .footer-note { font-size: .7rem; color: #334155; margin-top: 1rem; text-align: center; }
-    .back-link {
-      display: block; text-align: center;
-      font-size: .75rem; color: #475569;
-      text-decoration: none; margin-bottom: 1.5rem;
-    }
-    .back-link:hover { color: #94a3b8; }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <a href="/" class="back-link">← Volver al inicio</a>
-
-    <!-- Header -->
-    <div class="header">
-      <h1>📺 Flujo TV</h1>
-      <p>Activa tu membresía ahora</p>
-    </div>
-
-    <!-- Checkout form -->
-    <div id="checkout-form">
-      <!-- Plans -->
-      <div class="card">
-        <p class="card-title">Selecciona tu plan</p>
-        <div class="plans" id="plans-grid">
-          <div class="plan loading" style="min-height:80px; background:rgba(255,255,255,.03)"></div>
-          <div class="plan loading" style="min-height:80px; background:rgba(255,255,255,.03)"></div>
-          <div class="plan loading" style="min-height:80px; background:rgba(255,255,255,.03)"></div>
-          <div class="plan loading" style="min-height:80px; background:rgba(255,255,255,.03)"></div>
+      <!-- Header -->
+      <header class="co-header">
+        <div class="logo-wrap">
+          <img src="/images/logo_flujo.webp" alt="FlujoTV+" class="co-logo" />
         </div>
-        <div class="plan-method" id="method-label" style="margin-top:.875rem">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          <span id="method-text">Cargando método de pago...</span>
+        <div>
+          <h1 class="co-brand">FlujoTV<span class="brand-cyan">+</span></h1>
+          <p class="co-tagline">Streaming Premium · Activación Instantánea</p>
+        </div>
+      </header>
+
+      <!-- Plan card -->
+      <div class="plan-card">
+        <div class="plan-left">
+          <span class="plan-badge">✦ Plan Seleccionado</span>
+          <p class="plan-name" id="plan-name">{defaultPlan.name}</p>
+          <p class="plan-bonus" id="plan-bonus" style="display:none"></p>
+        </div>
+        <div class="plan-right">
+          <p class="plan-price" id="plan-price">${defaultPlan.price}</p>
+          <div class="plan-sub">
+            <span class="plan-cur">USD</span>
+            <span class="plan-per" id="plan-per" style="display:none"></span>
+          </div>
         </div>
       </div>
 
-      <!-- Form fields -->
-      <div class="card">
-        <p class="card-title">Tus datos</p>
-        <form id="checkout-data" novalidate>
+      <!-- Form -->
+      <div class="form-card">
+        <p class="form-heading">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Tus datos de activación
+        </p>
+
+        <form id="checkout-form" novalidate>
+
           <div class="field">
-            <label for="f-name">Nombre completo *</label>
-            <input id="f-name" type="text" placeholder="Juan Pérez" required autocomplete="name" />
+            <label for="f-name">Nombre Completo <span class="req">*</span></label>
+            <input id="f-name" type="text" placeholder="Juan Pérez" autocomplete="name" required />
           </div>
+
           <div class="field">
-            <label for="f-user">Username IPTV * <span>(solo letras, números, puntos, guiones)</span></label>
-            <input id="f-user" type="text" placeholder="juan.perez" required autocomplete="off" />
+            <label for="f-email">Correo Electrónico <span class="req">*</span></label>
+            <input id="f-email" type="email" placeholder="juan@email.com" autocomplete="email" required />
+            <p class="field-hint" id="email-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="f-phone">Número de Teléfono <span class="req">*</span></label>
+            <input id="f-phone" type="tel" autocomplete="tel" required />
+          </div>
+
+          <div class="field">
+            <label for="f-user">
+              Nombre de Usuario <span class="opt">(opcional)</span>
+              <span class="hint-inline">solo letras, números y puntos</span>
+            </label>
+            <input id="f-user" type="text" placeholder="Se generará automáticamente" autocomplete="off" />
             <p class="field-hint" id="user-hint"></p>
           </div>
-          <div class="field">
-            <label for="f-wa">WhatsApp * <span>(con código de país, ej: 573001234567)</span></label>
-            <input id="f-wa" type="tel" placeholder="573001234567" required autocomplete="tel" />
-          </div>
-          <div class="field">
-            <label for="f-email">Email <span>(recomendado para confirmación)</span></label>
-            <input id="f-email" type="email" placeholder="juan@email.com" autocomplete="email" />
-          </div>
+
           <div class="error-box" id="form-error" style="display:none"></div>
-          <button type="submit" class="btn" id="submit-btn" disabled>Cargando...</button>
+
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <span id="btn-text">Continuar al pago →</span>
+          </button>
+
         </form>
       </div>
-      <p class="footer-note">Recibirás tus credenciales por WhatsApp tras confirmar el pago.</p>
+
+      <p class="footer-note">Recibirás tus credenciales por WhatsApp y correo inmediatamente después del pago.</p>
+
     </div>
+  </main>
+</Layout>
 
-    <!-- Done screen (hidden initially) -->
-    <div id="done-screen" style="display:none">
-      <div class="done">
-        <div class="emoji">🎉</div>
-        <h2>¡Orden registrada!</h2>
-        <p id="done-desc">Haz clic para completar tu pago. Recibirás tus credenciales por WhatsApp.</p>
-      </div>
-      <div class="summary" id="done-summary"></div>
-      <a href="#" id="pay-btn" class="btn" style="text-decoration:none;text-align:center;display:block">Ir a Pagar</a>
-      <p class="footer-note">Tu cuenta se activa automáticamente tras confirmar el pago.</p>
-    </div>
-  </div>
+<style>
+  .co-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 4rem;
+    background: radial-gradient(ellipse 110% 60% at 20% -10%, #0c1a2e 0%, #0f172a 45%, #020617 100%);
+  }
 
-  <script define:vars={{ BRAND, COUNTRY, API_URL }}>
-    // ── Plan definitions ──────────────────────────────────────────────────
-    const PLAN_DEF = [
-      { key: '1',  label: '1 Mes',    months: 1  },
-      { key: '3',  label: '3 Meses',  months: 3  },
-      { key: '7',  label: '7 Meses',  months: 7  },
-      { key: '14', label: '14 Meses', months: 14 },
-    ];
+  .co-wrap { width: 100%; max-width: 480px; position: relative; z-index: 1; }
 
-    // Map landing plan IDs to backend keys
-    const PLAN_MAP = { '1m':'1', '3m':'3', '6m':'7', '12m':'14' };
+  .back-link {
+    display: inline-flex; align-items: center; gap: .35rem;
+    font-size: .78rem; color: rgba(255,255,255,.28); margin-bottom: 1.75rem;
+    transition: color .2s; font-family: 'DM Sans', sans-serif;
+  }
+  .back-link:hover { color: rgba(255,255,255,.65); }
 
-    // Read ?plan param from URL
-    const urlPlan = new URLSearchParams(location.search).get('plan');
-    let selectedKey = PLAN_MAP[urlPlan] ?? '1';
+  .co-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+  .logo-wrap {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: rgba(6,182,212,.1); border: 1px solid rgba(6,182,212,.28);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 6px;
+  }
+  .co-logo { width: 100%; height: 100%; object-fit: contain; }
+  .co-brand {
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.6rem; font-weight: 800;
+    color: #fff; line-height: 1; letter-spacing: -.02em;
+  }
+  .brand-cyan {
+    background: linear-gradient(135deg, #22d3ee, #06b6d4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .co-tagline { font-size: .74rem; color: rgba(255,255,255,.38); margin-top: .3rem; font-family: 'DM Sans', sans-serif; }
 
-    // ── State ─────────────────────────────────────────────────────────────
-    let config = null;     // from API
-    let usernameOk = null; // true | false | null (checking)
-    let userTimer = null;
+  .plan-card {
+    background: rgba(6,182,212,.06); border: 1px solid rgba(6,182,212,.22);
+    border-radius: 18px; padding: 1.4rem 1.5rem; margin-bottom: 1.25rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    box-shadow: 0 0 50px rgba(6,182,212,.08), inset 0 1px 0 rgba(6,182,212,.12);
+    position: relative; overflow: hidden;
+  }
+  .plan-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(34,211,238,.45), transparent);
+  }
+  .plan-badge {
+    font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: #06b6d4; display: block; margin-bottom: .4rem; font-family: 'DM Sans', sans-serif;
+  }
+  .plan-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 700; color: #fff; line-height: 1.1; }
+  .plan-bonus { font-size: .72rem; color: #22d3ee; margin-top: .3rem; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+  .plan-right { text-align: right; flex-shrink: 0; }
+  .plan-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.5rem; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -.03em; }
+  .plan-sub { display: flex; align-items: center; justify-content: flex-end; gap: .4rem; margin-top: .2rem; }
+  .plan-cur { font-size: .68rem; font-weight: 700; color: rgba(255,255,255,.35); font-family: 'DM Sans', sans-serif; }
+  .plan-per { font-size: .68rem; color: rgba(255,255,255,.28); font-family: 'DM Sans', sans-serif; }
 
-    const METHOD_LABEL = {
-      paypal:      'Pago vía PayPal',
-      dlocalgo:    'Pago vía Tarjeta / DLocalGo',
-      mercadopago: 'Pago vía MercadoPago',
-      whatsapp:    'Continuar por WhatsApp',
-    };
+  .form-card {
+    background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+    border-radius: 18px; padding: 1.5rem; margin-bottom: 1rem;
+    box-shadow: 0 8px 40px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.05);
+  }
+  .form-heading {
+    display: flex; align-items: center; gap: .4rem; font-size: .67rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.28);
+    margin-bottom: 1.35rem; font-family: 'DM Sans', sans-serif;
+  }
 
-    // ── Fetch config from backend ──────────────────────────────────────────
-    async function loadConfig() {
-      try {
-        const r = await fetch(`${API_URL}/api/v1/checkout/config?brand=${BRAND}&country=${COUNTRY}`);
-        config = await r.json();
-      } catch {
-        config = {
-          payment_method: 'paypal',
-          links: {},
-          prices_usd: { '1':9, '3':27, '7':49, '14':95 },
-          prices_ars: null,
-          currency: 'USD',
-          maintenance_mode: false,
-        };
-      }
-      if (config.maintenance_mode) {
-        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1rem"><div style="font-size:3rem">🔧</div><h2>En Mantenimiento</h2><p style="color:#94a3b8">Volvemos pronto.</p></div>';
-        return;
-      }
-      renderPlans();
-      renderMethodLabel();
-      enableSubmit();
-    }
+  .field { margin-bottom: 1.1rem; }
+  .field label { display: block; font-size: .8rem; font-weight: 600; color: rgba(255,255,255,.55); margin-bottom: .4rem; font-family: 'DM Sans', sans-serif; }
+  .req { color: #06b6d4; margin-left: .1rem; }
+  .opt { font-weight: 400; color: rgba(255,255,255,.22); font-size: .72rem; }
+  .hint-inline { display: block; font-size: .67rem; font-weight: 400; color: rgba(255,255,255,.18); margin-top: .1rem; font-family: 'DM Sans', sans-serif; }
 
-    function fmtPrice(price, currency) {
-      if (currency === 'ARS') return `ARS ${Number(price).toLocaleString('es-AR', { maximumFractionDigits:0 })}`;
-      return `$${Number(price).toFixed(0)} USD`;
-    }
+  .field input {
+    width: 100%; height: 2.875rem;
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+    border-radius: 10px; padding: 0 1rem; color: #fff;
+    font-size: .9rem; font-family: 'DM Sans', sans-serif; outline: none;
+    transition: border-color .2s, box-shadow .2s, background .2s; -webkit-appearance: none;
+  }
+  .field input::placeholder { color: rgba(255,255,255,.16); }
+  .field input:focus {
+    border-color: rgba(6,182,212,.5); background: rgba(6,182,212,.04);
+    box-shadow: 0 0 0 3px rgba(6,182,212,.1);
+  }
+  .field input.ok  { border-color: rgba(34,197,94,.4); }
+  .field input.err { border-color: rgba(239,68,68,.45); }
 
-    function renderPlans() {
-      const grid = document.getElementById('plans-grid');
-      const prices = config.currency === 'ARS' ? (config.prices_ars ?? config.prices_usd) : config.prices_usd;
-      const currency = config.currency ?? 'USD';
+  .field-hint { font-size: .7rem; margin-top: .35rem; min-height: 1rem; font-family: 'DM Sans', sans-serif; }
+  .field-hint.ok       { color: #4ade80; }
+  .field-hint.err      { color: #f87171; }
+  .field-hint.checking { color: rgba(255,255,255,.3); }
 
-      grid.innerHTML = PLAN_DEF.map(p => {
-        const price = prices[p.key] ?? 0;
-        const perMo = p.months > 1 ? fmtPrice(price / p.months, currency === 'ARS' ? 'ARS' : 'USD') + '/mes' : '';
-        const sel = selectedKey === p.key ? 'selected' : '';
-        return `<div class="plan ${sel}" data-key="${p.key}">
-          <div class="plan-label">${p.label}</div>
-          <div class="plan-price">${fmtPrice(price, currency)}</div>
-          ${perMo ? `<div class="plan-per">${perMo}</div>` : ''}
-        </div>`;
-      }).join('');
+  .error-box {
+    background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.2);
+    border-radius: 10px; padding: .75rem 1rem; color: #fca5a5;
+    font-size: .82rem; margin-bottom: 1rem; font-family: 'DM Sans', sans-serif;
+  }
 
-      grid.querySelectorAll('.plan').forEach(el => {
-        el.addEventListener('click', () => {
-          selectedKey = el.dataset.key;
-          grid.querySelectorAll('.plan').forEach(e => e.classList.remove('selected'));
-          el.classList.add('selected');
-          updateSubmitText();
-        });
-      });
-    }
+  .submit-btn {
+    display: block; width: 100%; padding: .95rem 1rem;
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    border: none; border-radius: 12px; color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(6,182,212,.35), inset 0 1px 0 rgba(255,255,255,.15);
+    transition: transform .15s, box-shadow .15s, opacity .15s; letter-spacing: .01em;
+  }
+  .submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(6,182,212,.5), inset 0 1px 0 rgba(255,255,255,.15);
+  }
+  .submit-btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
 
-    function renderMethodLabel() {
-      document.getElementById('method-text').textContent = METHOD_LABEL[config.payment_method] ?? config.payment_method;
-    }
+  .footer-note { text-align: center; font-size: .7rem; color: rgba(255,255,255,.18); font-family: 'DM Sans', sans-serif; }
+</style>
 
-    function updateSubmitText() {
-      if (!config) return;
-      const prices = config.currency === 'ARS' ? (config.prices_ars ?? config.prices_usd) : config.prices_usd;
-      const price = prices[selectedKey] ?? 0;
-      const priceStr = fmtPrice(price, config.currency ?? 'USD');
-      const btn = document.getElementById('submit-btn');
-      const method = config.payment_method;
-      if (method === 'whatsapp') {
-        btn.textContent = '💬 Continuar por WhatsApp';
-      } else if (method === 'mercadopago') {
-        btn.textContent = `🏦 Pagar con MercadoPago — ${priceStr}`;
-      } else if (method === 'dlocalgo') {
-        btn.textContent = `💳 Pagar con Tarjeta — ${priceStr}`;
+<style is:global>
+  .iti { width: 100%; display: block; }
+  .iti__selected-flag { background-color: rgba(255,255,255,.05) !important; border-right: 1px solid rgba(255,255,255,.08); border-radius: 10px 0 0 10px; }
+  .iti__country-list { background-color: #111827 !important; border: 1px solid rgba(6,182,212,.18) !important; border-radius: 12px !important; max-height: 220px; overflow-y: scroll !important; box-shadow: 0 12px 40px rgba(0,0,0,.6) !important; }
+  .iti__country-list::-webkit-scrollbar { width: 5px; }
+  .iti__country-list::-webkit-scrollbar-track { background-color: #0f172a !important; }
+  .iti__country-list::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 4px; }
+  .iti__country, .iti__country-list li, .iti__country-list li * { background-color: #111827 !important; }
+  .iti__country:hover, .iti__country:hover *, .iti__country.iti__highlight, .iti__country.iti__highlight * { background-color: #1e293b !important; }
+  .iti__country-name { color: rgba(255,255,255,.8) !important; }
+  .iti__dial-code { color: #06b6d4 !important; }
+  .iti--separate-dial-code .iti__selected-dial-code { color: rgba(255,255,255,.6); }
+  .iti-search-wrap { position: sticky; top: 0; z-index: 2; padding: 6px 8px; background-color: #111827 !important; list-style: none; border-bottom: 1px solid rgba(6,182,212,.1); }
+  .iti-custom-search { display: block; width: 100%; background-color: rgba(255,255,255,.05) !important; border: 1px solid rgba(255,255,255,.08); border-radius: 7px; color: rgba(255,255,255,.8); padding: .45rem .75rem; outline: none; font-size: .85rem; font-family: 'DM Sans', sans-serif; }
+  .iti-custom-search:focus { border-color: rgba(6,182,212,.5) !important; }
+  #f-phone { border-radius: 0 10px 10px 0 !important; }
+</style>
+
+<script define:vars={{ BRAND, COUNTRY, API_URL, PLANS_DATA, PLAN_MONTHS_MAP, PAYPAL_LINKS, WA_NUMBER }}>
+
+  function goPay(url) {
+    const a = document.createElement('a');
+    a.href = url;
+    a.referrerPolicy = 'no-referrer';
+    a.rel = 'noopener noreferrer nofollow';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  const rawPlan = new URLSearchParams(window.location.search).get('plan') || '1m';
+  const plan    = PLANS_DATA.find(p => p.id === rawPlan) || PLANS_DATA[0];
+  const months  = PLAN_MONTHS_MAP[plan.id] || 1;
+
+  document.getElementById('plan-name').textContent  = plan.name;
+  document.getElementById('plan-price').textContent = `$${plan.price}`;
+  document.title = `Activar ${plan.name} · FlujoTV+`;
+
+  if (plan.bonus) {
+    const el = document.getElementById('plan-bonus');
+    el.textContent = `✦ ${plan.bonus}`; el.style.display = '';
+  }
+  if (months > 1) {
+    const el = document.getElementById('plan-per');
+    el.textContent = `· $${(plan.price / months).toFixed(1)}/mes`; el.style.display = '';
+  }
+
+  let usernameOk = null, userTimer = null;
+  const userInput = document.getElementById('f-user');
+  const userHint  = document.getElementById('user-hint');
+
+  userInput.addEventListener('input', () => {
+    const raw = userInput.value;
+    const clean = raw.replace(/[^a-zA-Z0-9._-]/g, '').toLowerCase();
+    if (raw !== clean) userInput.value = clean;
+    userHint.textContent = ''; userHint.className = 'field-hint';
+    userInput.className = ''; usernameOk = null; clearTimeout(userTimer);
+    if (clean.length >= 3) userTimer = setTimeout(() => checkUsername(clean), 700);
+  });
+
+  async function checkUsername(username) {
+    userHint.textContent = 'Verificando disponibilidad...'; userHint.className = 'field-hint checking'; usernameOk = null;
+    try {
+      const r = await fetch(`${API_URL}/api/v1/checkout/check-username?username=${encodeURIComponent(username)}`);
+      const d = await r.json();
+      usernameOk = d.available;
+      if (d.available) {
+        userHint.textContent = '✓ Disponible'; userHint.className = 'field-hint ok'; userInput.className = 'ok';
       } else {
-        btn.textContent = `💳 Pagar con PayPal — ${priceStr}`;
+        userHint.className = 'field-hint err'; userInput.className = 'err';
+        if (d.suggestion) {
+          userHint.textContent = 'No disponible. Sugerencia: ';
+          const link = document.createElement('a');
+          link.href = '#'; link.textContent = `«${d.suggestion}»`;
+          link.style.cssText = 'color:#06b6d4;text-decoration:underline';
+          link.addEventListener('click', e => { e.preventDefault(); userInput.value = d.suggestion; checkUsername(d.suggestion); });
+          userHint.appendChild(link);
+        } else { userHint.textContent = 'No disponible. Intenta con otro.'; }
       }
-    }
+    } catch { usernameOk = true; }
+  }
 
-    function enableSubmit() {
-      document.getElementById('submit-btn').disabled = false;
-      updateSubmitText();
-    }
+  const emailInput = document.getElementById('f-email');
+  const emailHint  = document.getElementById('email-hint');
+  emailInput.addEventListener('blur', () => {
+    const val = emailInput.value.trim(); if (!val) return;
+    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
+    emailInput.className = ok ? 'ok' : 'err';
+    emailHint.textContent = ok ? '' : 'Ingresa un correo electrónico válido.';
+    emailHint.className = ok ? 'field-hint' : 'field-hint err';
+  });
+  emailInput.addEventListener('input', () => { emailInput.className = ''; emailHint.textContent = ''; emailHint.className = 'field-hint'; });
 
-    // ── Username check ─────────────────────────────────────────────────────
-    const userInput = document.getElementById('f-user');
-    const userHint  = document.getElementById('user-hint');
+  const phoneInput = document.getElementById('f-phone');
+  let iti = null;
+  const loadScript = src => new Promise(resolve => { const s = document.createElement('script'); s.src = src; s.onload = resolve; document.head.appendChild(s); });
 
-    userInput.addEventListener('input', () => {
-      const raw = userInput.value;
-      const clean = raw.replace(/[^a-zA-Z0-9._-]/g, '').toLowerCase();
-      if (raw !== clean) userInput.value = clean;
+  (async () => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet'; link.href = 'https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/css/intlTelInput.min.css';
+    document.head.appendChild(link);
+    await loadScript('https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/js/intlTelInput.min.js');
 
-      userHint.textContent = '';
-      userHint.className = 'field-hint';
-      userInput.className = '';
-      usernameOk = null;
-      clearTimeout(userTimer);
-
-      if (clean.length >= 3) {
-        userTimer = setTimeout(() => checkUsername(clean), 700);
-      }
+    iti = window.intlTelInput(phoneInput, {
+      initialCountry: 'auto',
+      geoIpLookup: cb => fetch('https://ipapi.co/json/').then(r => r.json()).then(d => cb(d.country_code)).catch(() => cb('US')),
+      preferredCountries: [], separateDialCode: true,
+      utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/js/utils.js',
     });
 
-    async function checkUsername(username) {
-      userHint.textContent = 'Verificando...';
-      userHint.className = 'field-hint checking';
-      userInput.className = '';
-      usernameOk = null;
+    setTimeout(() => {
       try {
-        const r = await fetch(`${API_URL}/api/v1/checkout/check-username?username=${encodeURIComponent(username)}`);
-        const d = await r.json();
-        usernameOk = d.available;
-        if (d.available) {
-          userHint.textContent = '✓ Disponible';
-          userHint.className = 'field-hint ok';
-          userInput.className = 'ok';
-        } else {
-          let msg = '✗ No disponible.';
-          if (d.suggestion) {
-            msg += ` Sugerencia: `;
-            userHint.textContent = msg;
-            userHint.className = 'field-hint err';
-            const link = document.createElement('a');
-            link.href = '#';
-            link.textContent = `«${d.suggestion}»`;
-            link.style.cssText = 'color:#fb923c;text-decoration:underline';
-            link.addEventListener('click', e => {
-              e.preventDefault();
-              userInput.value = d.suggestion;
-              checkUsername(d.suggestion);
+        const names = new Intl.DisplayNames(['es'], { type: 'region' });
+        document.querySelectorAll('.iti__country').forEach(el => {
+          const code = el.dataset.countryCode?.toUpperCase();
+          const nameEl = el.querySelector('.iti__country-name');
+          if (code && nameEl) { const es = names.of(code); if (es) nameEl.textContent = es; }
+        });
+      } catch (_) {}
+
+      const list = document.querySelector('.iti__country-list');
+      if (list) {
+        const wrap = document.createElement('li'); wrap.className = 'iti-search-wrap';
+        const box = document.createElement('input');
+        box.type = 'text'; box.placeholder = 'Buscar país...'; box.className = 'iti-custom-search';
+        wrap.appendChild(box); list.insertBefore(wrap, list.firstChild);
+
+        box.addEventListener('input', () => {
+          const q = box.value.toLowerCase().trim();
+          if (q) {
+            list.querySelectorAll('.iti__preferred').forEach(el => el.style.display = 'none');
+            list.querySelectorAll('.iti__divider').forEach(d => d.style.display = 'none');
+            list.querySelectorAll('.iti__country:not(.iti__preferred)').forEach(el => {
+              const name = el.querySelector('.iti__country-name')?.textContent.toLowerCase() ?? '';
+              const dial = el.querySelector('.iti__dial-code')?.textContent ?? '';
+              el.style.display = (name.includes(q) || dial.includes(q)) ? '' : 'none';
             });
-            userHint.appendChild(link);
           } else {
-            userHint.textContent = msg;
-            userHint.className = 'field-hint err';
+            list.querySelectorAll('.iti__country').forEach(el => el.style.display = '');
+            list.querySelectorAll('.iti__divider').forEach(d => d.style.display = '');
           }
-          userInput.className = 'err';
-        }
-      } catch {
-        usernameOk = true; // Si falla la verificación, no bloqueamos
-        userHint.textContent = '';
-      }
-    }
-
-    // ── Form submit ────────────────────────────────────────────────────────
-    document.getElementById('checkout-data').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const errBox = document.getElementById('form-error');
-      errBox.style.display = 'none';
-
-      const name  = document.getElementById('f-name').value.trim();
-      const user  = document.getElementById('f-user').value.trim();
-      const wa    = document.getElementById('f-wa').value.trim();
-      const email = document.getElementById('f-email').value.trim();
-
-      if (!name || !user || !wa) {
-        errBox.textContent = 'Completa todos los campos obligatorios.';
-        errBox.style.display = 'block';
-        return;
-      }
-      if (usernameOk === false) {
-        errBox.textContent = 'El username no está disponible. Elige otro.';
-        errBox.style.display = 'block';
-        return;
-      }
-      if (usernameOk === null && user.length >= 3) {
-        errBox.textContent = 'Espera a que se verifique el username.';
-        errBox.style.display = 'block';
-        return;
-      }
-
-      const btn = document.getElementById('submit-btn');
-      btn.disabled = true;
-      btn.textContent = 'Procesando...';
-
-      try {
-        const r = await fetch(`${API_URL}/api/v1/checkout/orders`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            full_name: name,
-            whatsapp_number: wa,
-            email: email || undefined,
-            plan_months: parseInt(selectedKey, 10),
-            country: COUNTRY,
-            brand: BRAND,
-            iptv_username: user,
-          }),
         });
-        const data = await r.json();
-        if (!r.ok) throw new Error(data.detail ?? 'Error al procesar');
-
-        showDone(data);
-      } catch (err) {
-        errBox.textContent = err.message || 'Error al procesar. Intenta nuevamente.';
-        errBox.style.display = 'block';
-        btn.disabled = false;
-        updateSubmitText();
+        phoneInput.addEventListener('close:countrydropdown', () => { box.value = ''; list.querySelectorAll('.iti__country').forEach(el => el.style.display = ''); list.querySelectorAll('.iti__divider').forEach(d => d.style.display = ''); });
+        phoneInput.addEventListener('open:countrydropdown', () => setTimeout(() => box.focus(), 50));
       }
-    });
+    }, 0);
+  })();
 
-    function showDone(data) {
-      document.getElementById('checkout-form').style.display = 'none';
-      const screen = document.getElementById('done-screen');
-      screen.style.display = 'block';
+  document.getElementById('checkout-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const errBox = document.getElementById('form-error');
+    errBox.style.display = 'none';
 
-      const isWA = data.payment_method === 'whatsapp';
-      document.getElementById('done-desc').textContent = isWA
-        ? 'Haz clic para contactarnos por WhatsApp y activar tu cuenta.'
-        : 'Haz clic para completar tu pago. Recibirás tus credenciales por WhatsApp.';
+    const name  = document.getElementById('f-name').value.trim();
+    const email = emailInput.value.trim();
+    const phone = iti ? iti.getNumber() : phoneInput.value.trim();
+    const user  = userInput.value.trim();
 
-      const planLabel = PLAN_DEF.find(p => p.key === String(data.plan_months))?.label ?? `${data.plan_months} mes(es)`;
-      const priceStr = data.currency === 'ARS'
-        ? `ARS ${Number(data.price).toLocaleString('es-AR', {maximumFractionDigits:0})}`
-        : `$${Number(data.price).toFixed(0)} USD`;
+    if (!name) { showError('El nombre completo es requerido.'); return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { showError('Ingresa un correo electrónico válido.'); return; }
+    if (!iti || !iti.isValidNumber()) { showError('Ingresa un número de teléfono válido con código de país.'); return; }
+    if (user && usernameOk === false) { showError('Ese nombre de usuario no está disponible.'); return; }
+    if (user && usernameOk === null && user.length >= 3) { showError('Espera a que se verifique el nombre de usuario.'); return; }
 
-      document.getElementById('done-summary').innerHTML = `
-        <div class="summary-row"><span>Username</span><span style="font-family:monospace">${data.iptv_username}</span></div>
-        <div class="summary-row"><span>Plan</span><span>${planLabel}</span></div>
-        <div class="summary-row"><span>Total</span><span>${priceStr}</span></div>
-        <div class="summary-row"><span>Método</span><span>${METHOD_LABEL[data.payment_method] ?? data.payment_method}</span></div>
-      `;
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    document.getElementById('btn-text').textContent = 'Procesando...';
 
-      const payBtn = document.getElementById('pay-btn');
+    try {
+      const resp = await fetch(`${API_URL}/api/v1/checkout/orders`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ full_name: name, email, whatsapp_number: phone, plan_months: months, country: COUNTRY, brand: BRAND, iptv_username: user || null }),
+      });
+      const data = await resp.json();
+      if (!resp.ok) throw new Error(data.detail ?? 'Error al procesar');
       if (data.payment_link) {
-        payBtn.href = data.payment_link;
-        payBtn.target = '_blank';
-        payBtn.rel = 'noopener noreferrer';
-        payBtn.textContent = isWA ? '💬 Abrir WhatsApp' : '💳 Ir a Pagar';
+        goPay(data.payment_link);
       } else {
-        payBtn.style.display = 'none';
+        const fallback = PAYPAL_LINKS[plan.id];
+        if (fallback) goPay(fallback);
+        else {
+          const msg = encodeURIComponent(`Hola, quiero activar el plan ${plan.name} de FlujoTV+ ($${plan.price} USD). Nombre: ${name}`);
+          window.location.href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
+        }
       }
+    } catch (err) {
+      showError(err.message || 'Error al procesar tu solicitud. Por favor intenta de nuevo.');
+      btn.disabled = false;
+      document.getElementById('btn-text').textContent = 'Continuar al pago →';
     }
+  });
 
-    // ── Init ──────────────────────────────────────────────────────────────
-    loadConfig();
-  </script>
-</body>
-</html>
+  function showError(msg) {
+    const errBox = document.getElementById('form-error');
+    errBox.textContent = msg; errBox.style.display = 'block';
+    errBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
